@@ -345,6 +345,57 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:1px solid var(-
 .vn-heart-pop{animation:vnHeart .48s cubic-bezier(.2,.8,.2,1)}@keyframes vnHeart{0%{transform:scale(1)}45%{transform:scale(1.35) rotate(-8deg)}100%{transform:scale(1)}}
 @media(prefers-reduced-motion:reduce){.vn-fly,.vn-pulse,.vn-heart-pop{animation:none!important;transition:none!important}}
 
+
+/* FUNCTIONALITY + VISUAL REPAIR PASS */
+.product{color:#171715!important}
+.product-title,.product-title h3,.product-title a,.product-title p,.product-foot,.product-foot span,.price{color:#171715!important}
+.product-foot{border-color:#e8e4dc!important}
+.card-add{cursor:pointer!important}
+.card-add:active,.route-btn:active{transform:scale(.985)!important}
+.heart{z-index:3;cursor:pointer!important;color:#171715!important}
+.heart.on{color:#fff!important;background:#171715!important}
+.photo{cursor:pointer}
+.product-photo .quick{display:none!important}
+.headin{grid-template-columns:auto minmax(0,1fr) auto!important}
+.brand{justify-self:start!important}
+.nav{justify-self:center!important;color:#ddd5c8!important}
+.head-actions{justify-self:end!important}
+.compare-head,.head-actions .saved-link,.head-actions .bag{color:#eee9df!important;background:#171715!important;border-color:#514b40!important}
+.head-actions .saved-link:hover,.head-actions .bag:hover,.compare-head:hover{background:#c4a16a!important;color:#171715!important;border-color:#c4a16a!important}
+.head-actions b{background:#c4a16a!important;color:#171715!important}
+.drawer-panel{background:#10100f!important;color:#eee9df!important}
+.drawer-head,.drawer-foot{border-color:#ffffff20!important}
+.drawer-head .eyebrow{color:#c4a16a!important}
+.drawer-head .close{background:#24231f!important;color:#eee9df!important}
+.drawer-foot{background:#171715!important}
+.drawer-foot button{background:#c4a16a!important;color:#171715!important;cursor:pointer}
+.cart-row{border-color:#ffffff20!important}
+.cart-row h4{color:#eee9df!important}
+.cart-row p{color:#aaa!important}
+.cart-row .qty button{color:#eee9df!important;border:1px solid #ffffff30!important;padding:6px 10px}
+.route-wrap{color:#eee9df!important}
+.route-title,.route-kicker{color:#eee9df}
+.route-lead{color:#b5aea2!important}
+.route-grid .product{color:#171715!important}
+.bag-page-layout{align-items:start}
+.bag-page-items,.bag-summary,.checkout-form,.checkout-summary,.tracking-card,.contact-form{min-width:0}
+.bag-summary,.checkout-form,.checkout-summary,.tracking-card,.contact-form{background:#191815!important;color:#eee9df!important;border:1px solid #ffffff20!important}
+.bag-summary h2,.checkout-summary h2{color:#eee9df!important}
+.bag-page-row{border-color:#ffffff20!important}
+.bag-page-info h3,.bag-page-info h3 a,.bag-page-info p,.bag-page-info strong{color:#eee9df!important}
+.bag-page-info .qty button{color:#eee9df!important;border:1px solid #ffffff30!important;padding:7px 10px}
+.route-btn:disabled{opacity:.4;cursor:not-allowed!important;transform:none!important}
+.route-actions input,.route-actions select,.checkout-form input,.checkout-form select,.checkout-form textarea,.contact-form input,.contact-form textarea{background:#111!important;color:#eee9df!important;border-color:#514b40!important}
+.route-actions input::placeholder,.checkout-form input::placeholder{color:#8e877c}
+.vn-fly{position:fixed;z-index:9999;pointer-events:none;object-fit:cover;border-radius:5px;box-shadow:0 12px 35px #0006;transition:transform .7s cubic-bezier(.2,.7,.2,1),opacity .7s,width .7s,height .7s}
+.vn-pulse{animation:vnPulse .5s ease}
+.vn-heart-pop{animation:vnHeart .45s ease}
+@keyframes vnPulse{50%{transform:scale(1.13);box-shadow:0 0 0 7px #c4a16a35}}
+@keyframes vnHeart{45%{transform:scale(1.3)}}
+@media(max-width:1000px){.headin{grid-template-columns:40px 1fr auto!important}.brand{justify-self:center!important}.head-actions{gap:5px!important}}
+@media(max-width:700px){.route-wrap{padding:48px 18px 70px!important}.bag-page-layout{grid-template-columns:1fr!important}.bag-summary{position:static!important}.route-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:22px 12px!important}}
+@media(max-width:430px){.head-actions .saved-link,.head-actions .bag,.compare-head{min-width:36px;padding:0 6px!important}.action-symbol{font-size:19px}.brand strong{font-size:19px!important}.route-grid{gap:16px 9px!important}.route-grid .product-title h3{font-size:19px!important}}
+
 </style>
 </head>
 <body>
@@ -396,40 +447,40 @@ const families=['All','Woody & Smoke','Oud & Amber','Leather & Amber','Citrus Fo
 function readStore(key,fallback){try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}}
 let family='All',cart=readStore('vn-cart',[]),wish=readStore('vn-wishlist',[]),orders=readStore('vn-orders',[]),recentlyViewed=readStore('vn-recent',[]),language=readStore('vn-language','en'),selected=null,drawerMode='cart',visibleCount=6,filteredProducts=[],productObserver=null,loadObserver=null;
 function persistStore(){try{localStorage.setItem('vn-cart',JSON.stringify(cart));localStorage.setItem('vn-wishlist',JSON.stringify(wish));localStorage.setItem('vn-orders',JSON.stringify(orders));localStorage.setItem('vn-recent',JSON.stringify(recentlyViewed));localStorage.setItem('vn-language',language)}catch(e){}}
-function toggleLanguage(){language=language==='en'?'ar':'en';try{localStorage.setItem('vn-language',language)}catch(e){}
-/* CODΞX: lightweight cart and wishlist interactions without route refresh */
+function toggleLanguage(){language=language==='en'?'ar':'en';persistStore();applyLanguage();render();renderRoute()}
+
+/* Stable global interactions: cart, wishlist, and image motion */
 function vnFlyTo(target,source){
  if(!target||!source||!source.getBoundingClientRect)return;
- const a=source.getBoundingClientRect(),b=target.getBoundingClientRect(),img=source.querySelector&&source.querySelector('img');
- const fly=document.createElement(img?'img':'div');fly.className='vn-fly';if(img)fly.src=img.currentSrc||img.src;else fly.textContent='✦';
- Object.assign(fly.style,{left:(a.left+a.width/2-24)+'px',top:(a.top+a.height/2-24)+'px',width:'48px',height:'48px'});
- document.body.appendChild(fly);requestAnimationFrame(()=>{fly.style.transform='translate('+(b.left+b.width/2-a.left-a.width/2)+'px,'+(b.top+b.height/2-a.top-a.height/2)+'px) scale(.15)';fly.style.opacity='.12';fly.style.width='10px';fly.style.height='10px'});setTimeout(()=>fly.remove(),780);
- target.classList.remove('vn-pulse');void target.offsetWidth;target.classList.add('vn-pulse');
+ const a=source.getBoundingClientRect(),b=target.getBoundingClientRect();
+ const image=source.matches&&source.matches('img')?source:source.querySelector&&source.querySelector('img');
+ const fly=document.createElement(image?'img':'span');fly.className='vn-fly';if(image)fly.src=image.currentSrc||image.src;else fly.textContent='✦';
+ Object.assign(fly.style,{left:(a.left+a.width/2-22)+'px',top:(a.top+a.height/2-22)+'px',width:'44px',height:'44px'});
+ document.body.appendChild(fly);
+ requestAnimationFrame(()=>{fly.style.transform='translate('+(b.left+b.width/2-a.left-a.width/2)+'px,'+(b.top+b.height/2-a.top-a.height/2)+'px) scale(.12)';fly.style.opacity='.08';fly.style.width='9px';fly.style.height='9px'});
+ setTimeout(()=>fly.remove(),760);target.classList.remove('vn-pulse');void target.offsetWidth;target.classList.add('vn-pulse');
 }
 function toggleWish(id){
- const source=document.activeElement,adding=!wish.includes(id);wish=adding?[...wish,id]:wish.filter(x=>x!==id);persistStore();updateCart();
+ const source=document.activeElement,adding=!wish.includes(id);
+ wish=adding?[...wish,id]:wish.filter(x=>x!==id);persistStore();
  if(adding)vnFlyTo(document.querySelector('.head-actions .saved-link'),source);
- if(source&&source.classList&&source.classList.contains('heart')){source.classList.toggle('on',adding);source.textContent=adding?'♥':'♡';source.classList.add('vn-heart-pop');setTimeout(()=>source.classList.remove('vn-heart-pop'),520)}
- if(location.hash==='#/wishlist')renderRoute();toast(adding?'Added to your saved compositions':'Removed from saved compositions');
+ if(source&&source.classList&&source.classList.contains('heart')){source.classList.toggle('on',adding);source.textContent=adding?'♥':'♡';source.classList.add('vn-heart-pop');setTimeout(()=>source.classList.remove('vn-heart-pop'),500)}
+ updateCart();if(location.hash==='#/wishlist')renderRoute();
+ toast(adding?'Added to your saved compositions':'Removed from saved compositions');
 }
 function add(id){
  const source=document.activeElement,p=items.find(x=>x.id===id);if(!p)return;
- const found=cart.find(x=>x.id===id);if(found)found.qty++;else cart.push({id,qty:1});persistStore();updateCart();
- vnFlyTo(document.querySelector('.head-actions .bag'),source);toast(p.name+' added to your bag');
+ const found=cart.find(x=>x.id===id);if(found)found.qty++;else cart.push({id,qty:1});persistStore();
+ vnFlyTo(document.querySelector('.head-actions .bag'),source);updateCart();
+ if(location.hash==='#/cart')renderRoute();toast(p.name+' added to your bag');
 }
-function openCart(){drawerMode='cart';updateCart();document.getElementById('cartDrawer').classList.add('show');document.body.style.overflow='hidden'}
-function openWishlist(){drawerMode='wishlist';updateCart();document.getElementById('cartDrawer').classList.add('show');document.body.style.overflow='hidden'}
-function closeCart(){document.getElementById('cartDrawer').classList.remove('show');document.body.style.overflow=''}
-function addSelected(){if(selected)add(selected.id);closeModal()}
-function updateQty(id,delta){const x=cart.find(x=>x.id===id);if(x)x.qty+=delta;cart=cart.filter(x=>x.qty>0);persistStore();updateCart()}
-function vnFallback(img){
- if(img.dataset.vnFallback)return;img.dataset.vnFallback='1';
- img.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 750%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x2=%221%22 y2=%221%22%3E%3Cstop stop-color=%22%23f1eee8%22/%3E%3Cstop offset=%221%22 stop-color=%22%23d8d0c3%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22600%22 height=%22750%22 fill=%22url(%23g)%22/%3E%3Crect x=%22205%22 y=%22220%22 width=%22190%22 height=%22320%22 rx=%2228%22 fill=%22%23171717%22/%3E%3Crect x=%22248%22 y=%22175%22 width=%22104%22 height=%2260%22 fill=%22%23b9a17c%22/%3E%3Crect x=%22220%22 y=%22335%22 width=%22160%22 height=%22100%22 fill=%22%23f5f2ec%22/%3E%3Ctext x=%22300%22 y=%22390%22 font-size=%2220%22 text-anchor=%22middle%22 fill=%22%23171717%22 font-family=%22Georgia%22 letter-spacing=%222%22%3EVALLON%3C/text%3E%3Ctext x=%22300%22 y=%22415%22 font-size=%2212%22 text-anchor=%22middle%22 fill=%22%23171717%22 font-family=%22Georgia%22 letter-spacing=%222%22%3ENOIR%3C/text%3E%3C/svg%3E';
-}
-document.querySelectorAll('img').forEach(img=>img.addEventListener('error',()=>vnFallback(img)));
-new MutationObserver(records=>records.forEach(rec=>rec.addedNodes.forEach(node=>{if(node.nodeType===1){if(node.tagName==='IMG')node.addEventListener('error',()=>vnFallback(node));node.querySelectorAll&&node.querySelectorAll('img').forEach(img=>img.addEventListener('error',()=>vnFallback(img)))}}))).observe(document.body,{childList:true,subtree:true});
-
-applyLanguage();renderRoute();if(location.hash==='#/compare')renderComparison();if(location.hash==='#/gift')updateGiftPreview();render();updateCart()}
+function openCart(){drawerMode='cart';updateCart();const d=document.getElementById('cartDrawer');d.classList.add('show');document.body.style.overflow='hidden'}
+function openWishlist(){drawerMode='wishlist';updateCart();const d=document.getElementById('cartDrawer');d.classList.add('show');document.body.style.overflow='hidden'}
+function closeCart(){const d=document.getElementById('cartDrawer');d.classList.remove('show');document.body.style.overflow=''}
+function addSelected(){if(selected)add(selected.id);closeModal();openCart()}
+function updateQty(id,delta){const x=cart.find(x=>x.id===id);if(!x)return;x.qty+=delta;cart=cart.filter(x=>x.qty>0);persistStore();updateCart();if(location.hash==='#/cart')renderRoute()}
+function vnFallback(img){if(!img||img.dataset.vnFallback)return;img.dataset.vnFallback='1';img.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 750%22%3E%3Crect width=%22600%22 height=%22750%22 fill=%22%23e9e5dc%22/%3E%3Crect x=%22205%22 y=%22220%22 width=%22190%22 height=%22320%22 rx=%2228%22 fill=%22%23171717%22/%3E%3Crect x=%22248%22 y=%22175%22 width=%22104%22 height=%2260%22 fill=%22%23b9a17c%22/%3E%3Ctext x=%22300%22 y=%22390%22 font-size=%2220%22 text-anchor=%22middle%22 fill=%22%23ffffff%22 font-family=%22Georgia%22%3EVALLON NOIR%3C/text%3E%3C/svg%3E'}
+document.addEventListener('error',e=>{if(e.target&&e.target.tagName==='IMG')vnFallback(e.target)},true);
 function applyLanguage(){document.documentElement.lang=language;document.documentElement.dir=language==='ar'?'rtl':'ltr';const b=document.getElementById('languageToggle');if(b)b.textContent=language==='ar'?'العربية ✓':'EN / AR';const ar=language==='ar';const nav=document.querySelectorAll('.desktop-nav a');['Collection','About','Journal','Contact'].forEach((v,i)=>{if(nav[i])nav[i].textContent=ar?['المجموعة','عن الدار','المجلة','تواصل'][i]:v});const side=document.querySelectorAll('.sidebar-link');['Home','Collection','Wishlist','About','Journal','Contact','Checkout'].forEach((v,i)=>{if(side[i])side[i].textContent=ar?['الرئيسية','المجموعة','المفضلة','عن الدار','المجلة','تواصل','إتمام الطلب'][i]:v});const hero=document.querySelector('.hero-copy .eyebrow');if(hero)hero.textContent=ar?'فنّ أن تترك أثراً':'The art of being unforgettable';const hp=document.querySelector('.hero-copy>p');if(hp)hp.textContent=ar?'ليس مجرد عطر ترتديه، بل أثر يبقى في الذاكرة. اكتشف مجموعة عطور عصرية صيغت من خامات نادرة وثقة هادئة وتباين متوازن.':'Not simply worn. Remembered. Discover a modern fragrance wardrobe shaped by rare materials, quiet confidence and the poetry of contrast.';const cta=document.querySelector('.hero-copy .cta');if(cta)cta.textContent=ar?'اكتشف مجموعة العطور ←':'Discover the signature collection　→';const search=document.getElementById('search');if(search)search.placeholder=ar?'ابحث عن عطرك':'Find your fragrance';const signup=document.querySelector('.signup h3');if(signup)signup.textContent=ar?'رسائل من الدار':'Letters from the maison'}
 function escapeHTML(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function makeOrderId(){return 'VN-'+new Date().toISOString().slice(0,10).replace(/-/g,'')+'-'+Math.random().toString(36).slice(2,7).toUpperCase()}
