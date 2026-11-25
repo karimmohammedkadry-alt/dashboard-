@@ -430,11 +430,66 @@ button:active,.cta:active,.route-btn:active,.card-add:active{transform:scale(.97
 html{scroll-behavior:smooth}
 img{content-visibility:auto}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style><style id="vn-noir-restoration">
+:root{--paper:#11100f!important;--ink:#f1ece3!important;--gold:#c6a16b!important;--muted:#b8ad9e!important;--line:rgba(241,236,227,.16)!important}
+html,body,#routeView{background:#11100f!important;color:#f1ece3!important}
+.header{background:rgba(12,11,10,.92)!important;border-color:rgba(241,236,227,.14)!important}
+.brand strong,.header .bag,.header .saved-link{color:#f1ece3!important}
+.brand small,.header .saved-link{color:#c6a16b!important}
+.hero:before{background:linear-gradient(90deg,#090807ed 0%,#090807b8 45%,#09080730 100%),linear-gradient(0deg,#11100f 0%,transparent 22%)!important}
+.hero-copy,.hero h1,.hero p{color:#f1ece3!important}.hero h1 i,.eyebrow,.num{color:#c6a16b!important}
+.hero .cta,.cta,.route-btn{background:#c6a16b!important;color:#17130d!important;border-color:#c6a16b!important}
+.section,#collection,.pillars,.journal{background:#11100f!important}
+.section-head h2,.pillar h3,.product-title h3,.journal h2,.route-title,.detail-copy h1{color:#f1ece3!important}
+.section-head p,.pillar p,.product-title p,.journal p,.route-lead,.route-prose{color:#b8ad9e!important}
+.tools input,.tools select,.checkout-form input,.checkout-form select,.checkout-form textarea,.contact-form input,.contact-form textarea{background:#171512!important;color:#f1ece3!important;border-color:rgba(241,236,227,.2)!important}
+.filters button{color:#d0c5b6!important;border-color:rgba(241,236,227,.2)!important}.filters button.active{background:#c6a16b!important;color:#17130d!important}
+.photo{background:#1b1915!important;border-color:rgba(241,236,227,.12)!important}
+.photo img{filter:saturate(.92) contrast(1.04);transform:translateZ(0);transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .5s!important}
+.product:hover .photo img{filter:saturate(1.08) contrast(1.05)}
+.tag,.heart{background:rgba(15,14,12,.88)!important;color:#f1ece3!important;border-color:rgba(241,236,227,.22)!important}
+.heart.on,.product-foot button{color:#d2ad76!important}.price{color:#e5d4b8!important}
+.atelier{background:#191713!important;color:#f1ece3!important}.atelier h2,.atelier p{color:#f1ece3!important}
+.signup{background:linear-gradient(145deg,#ffffff0b,#ffffff02)!important;border-color:rgba(241,236,227,.2)!important}.signup h3,.signup input{color:#f1ece3!important}
+.footer{background:#080807!important;color:#f1ece3!important}.footer p,.footer a{color:#b8ad9e!important}
+.modal,.drawer-panel,.sidebar-panel{background:#151310!important;color:#f1ece3!important;border-color:rgba(241,236,227,.16)!important}
+.modal-copy p,.cart-row p{color:#b8ad9e!important}.close{background:#211e18!important;color:#f1ece3!important;border-color:#ffffff20!important}
+.drawer-head,.drawer-foot,.cart-row{border-color:rgba(241,236,227,.16)!important}.drawer-foot button{background:#c6a16b!important;color:#17130d!important}
+#introLoader{background:#090807!important}.loader-mark{color:#f1ece3!important}.loader-caption,.loader-percent{color:#c6a16b!important}
+.route-wrap{color:#f1ece3!important}.route-btn.secondary{background:transparent!important;color:#e9dfd0!important;border-color:rgba(241,236,227,.3)!important}
+.order-summary,.bag-summary,.signature-panel,.tracking-card,.order-history-card,.experience-tile{background:#191713!important;color:#f1ece3!important;border:1px solid rgba(241,236,227,.14)!important}
+.order-line,.editorial-card,.detail-notes span{border-color:rgba(241,236,227,.16)!important;color:#ded3c4!important}
+.empty-state{color:#f1ece3!important}.empty-state p{color:#b8ad9e!important}
+#mobileSidebar{background:rgba(0,0,0,.66)!important;backdrop-filter:blur(7px)}
+.sidebar-panel{border-right:1px solid rgba(241,236,227,.15)!important}.sidebar-top,.sidebar-link{border-color:rgba(241,236,227,.14)!important}.sidebar-link{color:#e8dfd2!important}.sidebar-close{color:#f1ece3!important}
+.vn-menu-trigger{display:flex!important;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;padding:10px;background:transparent;border:1px solid rgba(241,236,227,.25);border-radius:50%;cursor:pointer;z-index:2}
+.vn-menu-trigger span{display:block;width:100%;height:1px;background:#e8dfd2;transition:transform .3s,opacity .3s}
+.vn-menu-trigger:hover{border-color:#c6a16b;box-shadow:0 0 22px #c6a16b22}
+.vn-header-inner{display:grid!important;grid-template-columns:1fr auto 1fr!important;align-items:center!important}
+.vn-header-spacer{display:none!important}.vn-center-brand{justify-self:center!important;grid-column:2!important;grid-row:1!important}
+.vn-menu-trigger{grid-column:1!important;grid-row:1!important;justify-self:start!important}
+.vn-icon-actions{grid-column:3!important;grid-row:1!important;justify-self:end!important}
+.bag-page-row,.order-history-card{background:linear-gradient(135deg,#ffffff08,#ffffff02)!important;border:1px solid rgba(241,236,227,.14)!important;border-radius:3px;padding:18px!important;margin-bottom:16px;box-shadow:0 16px 42px #0002}
+.bag-page-info h3,.order-history-card h3{color:#f1ece3!important}.bag-page-info p{color:#b8ad9e!important}
+@media(min-width:801px){.sidebar-panel{width:min(390px,34vw)!important}.vn-header-inner{max-width:1440px!important}}
+@media(max-width:700px){.vn-header-inner{grid-template-columns:1fr auto 1fr!important}.vn-menu-trigger{width:38px;height:38px}.vn-center-brand strong{font-size:17px!important}.head-actions{gap:7px!important}}
+@media(prefers-reduced-motion:no-preference){
+ .product{perspective:1000px}
+ .product .photo{transform-style:preserve-3d;transition:box-shadow .45s,border-color .45s;box-shadow:0 10px 30px #0002}
+ .product:hover .photo{box-shadow:0 24px 55px #0006;border-color:#c6a16b!important}
+ .product:hover .photo img{transform:scale(1.045) translateZ(18px)}
+ .route-enter{animation:vnCinematicIn .62s cubic-bezier(.2,.75,.25,1) both}
+ @keyframes vnCinematicIn{from{opacity:0;transform:translateY(20px) scale(.99)}to{opacity:1;transform:none}}
+ .vn-menu-trigger:active,.vn-icon-button:active,.route-btn:active{transform:scale(.96)}
+ .bag-page-row,.order-history-card,.signature-card,.note-world-card{transition:transform .35s,box-shadow .35s,border-color .35s}
+ .bag-page-row:hover,.order-history-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px #0004;border-color:#c6a16b!important}
+}
+@media(prefers-reduced-motion:reduce){.product .photo,.product .photo img,.bag-page-row,.order-history-card{transform:none!important;transition:none!important}}
 </style></head>
 <body>
 <div id="introLoader"><div class="loader-mark">VALLON NOIR</div><div class="loader-caption">MAISON DE PARFUMS</div><div class="loader-track"><span id="loaderFill"></span></div><div class="loader-percent" id="loaderPercent">00%</div></div><div id="scrollLoader"><span></span></div>
 
-<header class="header vn-minimal-header"><div class="wrap vn-header-inner"><div class="vn-header-spacer"></div><a href="#" class="brand vn-center-brand" aria-label="Vallon Noir home"><strong>VALLON NOIR</strong></a><div class="head-actions vn-icon-actions"><button class="saved-link vn-icon-button" onclick="openWishlist()" aria-label="Open wishlist" title="Wishlist"><span class="action-symbol">♡</span><b id="wishCount">0</b></button><button class="bag vn-icon-button" onclick="openCart()" aria-label="Open shopping bag" title="Shopping bag"><span class="action-symbol">⌑</span><b id="bagCount">0</b></button></div></div></header>
+<header class="header vn-minimal-header"><div class="wrap vn-header-inner"><button class="vn-menu-trigger" onclick="openSidebar()" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button><div class="vn-header-spacer"></div><a href="#" class="brand vn-center-brand" aria-label="Vallon Noir home"><strong>VALLON NOIR</strong></a><div class="head-actions vn-icon-actions"><button class="saved-link vn-icon-button" onclick="openWishlist()" aria-label="Open wishlist" title="Wishlist"><span class="action-symbol">♡</span><b id="wishCount">0</b></button><button class="bag vn-icon-button" onclick="openCart()" aria-label="Open shopping bag" title="Shopping bag"><span class="action-symbol">⌑</span><b id="bagCount">0</b></button></div></div></header>
 <main id="homeView">
 <section class="hero"><div class="wrap"><div class="hero-copy"><div class="eyebrow">The art of being unforgettable</div><h1>Leave<br><i>an impression.</i></h1><p>Not simply worn. Remembered. Discover a modern fragrance wardrobe shaped by rare materials, quiet confidence and the poetry of contrast.</p><a class="cta" href="#collection">Discover the signature collection　→</a></div><div class="hero-meta">Grasse · Paris · Est. 2026</div></div></section>
 <div class="wrap"><section class="pillars"><div class="pillar"><span class="num">01</span><div><h3>Rare raw materials</h3><p>Sourced with discernment. Selected for character, not convention.</p></div></div><div class="pillar"><span class="num">02</span><div><h3>Slow composition</h3><p>Each formula is given the time and space it deserves.</p></div></div><div class="pillar"><span class="num">03</span><div><h3>Made to be remembered</h3><p>A personal signature that lingers beyond the moment.</p></div></div></section>
@@ -447,7 +502,7 @@ img{content-visibility:auto}
 <footer class="footer"><div class="wrap"><div class="footgrid"><div><div class="footbrand">VALLON NOIR</div><div class="eyebrow" style="margin-top:10px">Maison de Parfums Masculins</div></div><div><p>Grasse · Paris</p><p>Compositions of character, made to be remembered.</p><a href="#/collection">Explore the collection ↗</a></div><div><p>Have a question?</p><a href="mailto:maison@vallonnoir.example">Contact the maison ↗</a><p><a href="#/track">Track an order · تتبع طلبك</a></p></div></div><div class="footend"><span>© 2026 Vallon Noir. All rights reserved.</span><span>Designed with intention.</span></div><div class="site-footer-credit"><span>Crafted as a digital experience by</span><button class="codex-trigger" onclick="openCodex()" aria-label="Discover the CODΞX project notes">CODΞX ✳</button><span>·</span><a href="https://karimmohammedkadry-alt.github.io/PROTOFLIO-CODEX/" target="_blank" rel="noopener noreferrer">View portfolio ↗</a></div></div></div></footer>
 <div class="codex-modal" id="codexModal" onclick="if(event.target===this)closeCodex()"><section class="codex-panel" role="dialog" aria-modal="true" aria-labelledby="codexTitle"><button class="codex-close" onclick="closeCodex()" aria-label="Close">×</button><div class="eyebrow">THE DIGITAL CRAFT · CODΞX</div><h2 id="codexTitle">A signature<br><i>behind the experience.</i></h2><p>CODΞX is the creative and development signature behind this presentation — shaping the visual language, responsive experience and small interactions that bring the Vallon Noir maison to life.</p><div class="codex-meta"><div><small>Art direction</small><strong>Noir editorial</strong></div><div><small>Experience</small><strong>Motion & detail</strong></div><div><small>Build</small><strong>Responsive front-end</strong></div><div><small>Mode</small><strong>Demo · Local only</strong></div></div><p>Designed for presentation. No backend, database, live payments or server-side newsletter subscription is connected.</p><a class="route-btn" href="https://karimmohammedkadry-alt.github.io/PROTOFLIO-CODEX/" target="_blank" rel="noopener noreferrer">Explore the CODΞX portfolio ↗</a></section></div>
 <div class="overlay" id="productModal" onclick="if(event.target===this)closeModal()"><div class="modal"><button class="close" onclick="closeModal()">×</button><img loading="lazy" decoding="async" id="modalImg" alt=""><div class="modal-copy"><div class="eyebrow" id="modalFamily"></div><h2 id="modalName"></h2><p id="modalSubtitle"></p><p id="modalDesc"></p><div class="modal-notes"><div class="eyebrow">Olfactive notes</div><div id="modalNotes"></div></div><div class="modal-bottom"><strong id="modalPrice"></strong><button class="cta" style="margin:0" onclick="addSelected()">Add to bag　→</button></div></div></div></div>
-<div class="drawer" id="cartDrawer" onclick="if(event.target===this)closeCart()"><aside class="drawer-panel"><div class="drawer-head"><div><div class="eyebrow" id="drawerEyebrow">Your selection</div><div class="serif" style="font-size:29px" id="drawerTitle">The bag (<span id="drawerCount">0</span>)</div></div><button class="close" style="position:static" onclick="closeCart()">×</button></div><div class="drawer-body" id="cartItems"></div><div class="drawer-foot" id="cartFoot"></div></aside></div><div class="toast" id="toast"></div><div id="mobileSidebar" onclick="if(event.target===this)closeSidebar()"><aside class="sidebar-panel"><div class="sidebar-top"><strong>VALLON NOIR</strong><button class="sidebar-close" onclick="closeSidebar()">×</button></div><a class="sidebar-link" href="#/" onclick="closeSidebar()">Home</a><a class="sidebar-link" href="#/collection" onclick="closeSidebar()">Collection</a><a class="sidebar-link" href="#/wishlist" onclick="closeSidebar()">Wishlist</a><a class="sidebar-link" href="#/about" onclick="closeSidebar()">About</a><a class="sidebar-link" href="#/journal" onclick="closeSidebar()">Journal</a><a class="sidebar-link" href="#/contact" onclick="closeSidebar()">Contact</a><a class="sidebar-link" href="#/checkout" onclick="closeSidebar()">Checkout</a><a class="sidebar-link" href="#/track" onclick="closeSidebar()">Track order · تتبع الطلب</a><a class="sidebar-link" href="#/quiz" onclick="closeSidebar()">Find your signature</a><a class="sidebar-link" href="#/explorer" onclick="closeSidebar()">Olfactory explorer</a><a class="sidebar-link" href="#/gift" onclick="closeSidebar()">Gift atelier</a><a class="sidebar-link" href="#/campaign" onclick="closeSidebar()">Campaign room</a><a class="sidebar-link" href="#/case" onclick="closeSidebar()">CODΞX case study</a></aside></div>
+<div class="drawer" id="cartDrawer" onclick="if(event.target===this)closeCart()"><aside class="drawer-panel"><div class="drawer-head"><div><div class="eyebrow" id="drawerEyebrow">Your selection</div><div class="serif" style="font-size:29px" id="drawerTitle">The bag (<span id="drawerCount">0</span>)</div></div><button class="close" style="position:static" onclick="closeCart()">×</button></div><div class="drawer-body" id="cartItems"></div><div class="drawer-foot" id="cartFoot"></div></aside></div><div class="toast" id="toast"></div><div id="mobileSidebar" onclick="if(event.target===this)closeSidebar()"><aside class="sidebar-panel"><div class="sidebar-top"><strong>VALLON NOIR</strong><button class="sidebar-close" onclick="closeSidebar()">×</button></div><a class="sidebar-link" href="#/" onclick="closeSidebar()">Home</a><a class="sidebar-link" href="#/collection" onclick="closeSidebar()">Collection</a><a class="sidebar-link" href="#/wishlist" onclick="closeSidebar()">Wishlist</a><a class="sidebar-link" href="#/about" onclick="closeSidebar()">About</a><a class="sidebar-link" href="#/journal" onclick="closeSidebar()">Journal</a><a class="sidebar-link" href="#/contact" onclick="closeSidebar()">Contact</a><a class="sidebar-link" href="#/checkout" onclick="closeSidebar()">Checkout</a><a class="sidebar-link" href="#/orders" onclick="closeSidebar()">My orders · طلباتي</a><a class="sidebar-link" href="#/track" onclick="closeSidebar()">Track order · تتبع الطلب</a><a class="sidebar-link" href="#/quiz" onclick="closeSidebar()">Find your signature</a><a class="sidebar-link" href="#/explorer" onclick="closeSidebar()">Olfactory explorer</a><a class="sidebar-link" href="#/gift" onclick="closeSidebar()">Gift atelier</a><a class="sidebar-link" href="#/campaign" onclick="closeSidebar()">Campaign room</a><a class="sidebar-link" href="#/case" onclick="closeSidebar()">CODΞX case study</a></aside></div>
 <script>function toggleMobileNav(force){const nav=document.getElementById("mobileNav");const btn=document.querySelector(".mobile-toggle");const open=force===undefined?!nav.classList.contains("open"):force;nav.classList.toggle("open",open);if(btn)btn.setAttribute("aria-expanded",String(open));}
 const items=[
 {id:'nocturne',name:'Nocturne Extrait',subtitle:'Smoked Atlas Cedar · Black Frankincense',family:'Woody & Smoke',price:5800,tag:'Signature',img:'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=640&q=68',notes:['Black Pepper','Frankincense','Atlas Cedar'],desc:'A nocturnal composition of charred Atlas cedar, Omani frankincense and cold volcanic minerality. Deep, composed, unforgettable.'},
@@ -528,7 +583,7 @@ function showProduct(id){recentlyViewed=[id,...recentlyViewed.filter(x=>x!==id)]
 function closeModal(){document.getElementById('productModal').classList.remove('show')}
 function addSelected(){if(selected)add(selected.id);closeModal();openCart()}
 function openCart(){location.hash='#/cart';}
-function openWishlist(){drawerMode='wishlist';updateCart();document.getElementById('cartDrawer').classList.add('show')}
+function openWishlist(){location.hash='#/wishlist';}
 function closeCart(){document.getElementById('cartDrawer').classList.remove('show')}
 function updateQty(id,delta){let x=cart.find(x=>x.id===id);if(x)x.qty+=delta;cart=cart.filter(x=>x.qty>0);persistStore();updateCart();if(location.hash==='#/cart')renderRoute()}
 function updateCart(){
@@ -575,6 +630,9 @@ function renderRoute(){
   const subtotal=cart.reduce((sum,x)=>sum+(items.find(p=>p.id===x.id)?.price||0)*x.qty,0);
   const delivery=subtotal===0||subtotal>=3500?0:150;
   out=routeShell('YOUR SHOPPING BAG · سلتك','Shopping Bag','<p class="route-lead" dir="rtl">كل اختياراتك في مكان واحد — راجع المنتجات والكميات قبل إتمام الطلب.</p><div class="bag-page-layout"><section class="bag-page-items">'+(cart.length?cart.map(x=>{const p=items.find(y=>y.id===x.id);return '<article class="bag-page-row"><a href="#/product/'+p.id+'"><img loading="lazy" src="'+p.img+'" alt="'+p.name+'"></a><div class="bag-page-info"><div class="route-kicker">'+p.family+'</div><h3><a href="#/product/'+p.id+'">'+p.name+'</a></h3><p>'+p.subtitle+'</p><strong>'+money(p.price)+'</strong><div class="qty bag-qty"><button onclick="updateQty(\''+p.id+'\',-1)">−</button><span>'+x.qty+'</span><button onclick="updateQty(\''+p.id+'\',1)">＋</button><button class="bag-remove" onclick="updateQty(\''+p.id+'\',-'+x.qty+')">إزالة Remove</button></div></div></article>'}).join(''):'<div class="empty-state"><span>✳</span><h2>سلتك لسه فاضية</h2><p>Your next signature scent is waiting.</p><a class="route-btn" href="#/collection">اكتشف المجموعة · Explore</a></div>')+'</section><aside class="bag-summary"><span class="route-kicker">ORDER SUMMARY · ملخص الطلب</span><h2>تفاصيل السلة</h2><div class="order-line"><span>Subtotal · المنتجات</span><b>'+money(subtotal)+'</b></div><div class="order-line"><span>Delivery · التوصيل</span><b>'+(delivery?money(delivery):'Complimentary')+'</b></div><div class="order-line bag-total"><span>Total · الإجمالي</span><b>'+money(subtotal+delivery)+'</b></div><button class="route-btn bag-checkout" '+(!cart.length?'disabled':'')+' onclick="location.hash=\'#/checkout\'">إتمام الطلب · Checkout →</button><a class="continue-link" href="#/collection">متابعة التسوق · Continue shopping</a><p class="bag-note">Demo checkout · لا يتم تحصيل أي مدفوعات فعلية.</p></aside></div>');
+ }else if(route==='orders'){
+  const history=orders.map(o=>'<article class="order-history-card"><div><span class="route-kicker">ORDER · '+escapeHTML(o.createdAt)+'</span><h3>'+escapeHTML(o.id)+'</h3><p>'+o.items.reduce((n,x)=>n+x.qty,0)+' items · '+money(o.total)+'</p></div><a class="route-btn secondary" href="#/track">Track order →</a></article>').join('');
+  out=routeShell('YOUR MAISON HISTORY · سجل طلباتك','My Orders','<p class="route-lead" dir="rtl">طلباتك التي تم إنشاؤها على هذا المتصفح تظهر هنا.</p>'+(history||'<div class="empty-state"><span>⌑</span><h2>لا توجد طلبات حتى الآن</h2><p>Your order history will appear here after checkout.</p><a class="route-btn" href="#/collection">Explore collection</a></div>'));
  }else if(route==='track'){
   out=routeShell('ORDER CARE · خدمة متابعة الطلبات',language==='ar'?'تتبع طلبك':'Track your order','<div class="tracking-card"><p class="route-lead">'+(language==='ar'?'أدخل رقم الطلب والبريد الإلكتروني أو رقم الهاتف الذي استخدمته عند إتمام الطلب.':'Enter your order reference and the email address or phone number used at checkout.')+'</p><form class="tracking-form" onsubmit="trackOrder(event)"><label>Order reference · رقم الطلب<input name="orderId" required placeholder="VN-20261125-ABCDE"></label><label>Email or phone · البريد أو الهاتف<input name="contact" required placeholder="Email / +20..."></label><button class="route-btn" type="submit">'+(language==='ar'?'عرض حالة الطلب':'Find my order')+' →</button></form><div id="trackingResult" aria-live="polite"></div><p class="tracking-notice">Demo tracking: orders created in this browser are saved locally. Cross-device tracking and live delivery updates require a connected backend and carrier integration.</p></div>');
  }else if(route==='checkout'){
@@ -635,6 +693,16 @@ window.addEventListener('hashchange',()=>{document.body.classList.add('route-cha
 window.addEventListener('popstate',()=>{renderRoute();if(location.hash==='#/gift')updateGiftPreview()});
 
 applyLanguage();renderRoute();
+// Lightweight pointer tilt for desktop product cards only.
+document.addEventListener('pointermove',function(e){
+ if(e.pointerType==='touch'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const card=e.target.closest('.product .photo');
+ if(!card)return;
+ const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+ card.style.transform='perspective(900px) rotateY('+(x*5)+'deg) rotateX('+(-y*5)+'deg) translateY(-3px)';
+});
+document.addEventListener('pointerout',function(e){const card=e.target.closest('.product .photo');if(card&&!card.contains(e.relatedTarget))card.style.transform='';});
+
 
 </script>
 </body></html>
