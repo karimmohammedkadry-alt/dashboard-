@@ -157,12 +157,55 @@ html,body{background:#fff!important;color:#171717!important}
 @media(max-width:480px){.route-grid{grid-template-columns:1fr 1fr}.route-title{font-size:52px}.route-wrap{padding-left:18px;padding-right:18px}.editorial-card{grid-template-columns:45px 1fr;gap:15px}}
 @media(prefers-reduced-motion:no-preference){.route-enter{animation:routeIn .65s cubic-bezier(.2,.7,.2,1) both}@keyframes routeIn{from{opacity:0;transform:translateY(24px);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}}
 
+
+/* Refined bilingual storefront */
+.header{height:82px!important;box-shadow:0 5px 24px #00000006!important}
+.headin{display:grid!important;grid-template-columns:minmax(180px,1fr) auto minmax(180px,1fr)!important;gap:28px!important}
+.brand{position:static!important;transform:none!important;justify-self:start!important;white-space:nowrap}
+.brand strong{font-size:30px!important;letter-spacing:.16em!important}
+.desktop-nav{justify-content:center;align-items:center;gap:clamp(16px,2.5vw,38px)!important;white-space:nowrap}
+.desktop-nav a{font-size:10px!important;letter-spacing:.12em!important}
+.head-actions{justify-self:end;gap:18px!important;white-space:nowrap}
+.header .saved-link,.header .bag{font-size:10px!important;letter-spacing:.08em!important;padding:10px 0}
+.photo.product-photo{cursor:pointer}
+.photo-hint{position:absolute;left:14px;bottom:14px;background:#fff;color:#171717;padding:9px 12px;font-size:8px;letter-spacing:.12em;text-transform:uppercase;opacity:0;transform:translateY(5px);transition:.25s;pointer-events:none}
+.product-photo:hover .photo-hint,.product-photo:focus-within .photo-hint{opacity:1;transform:none}
+.heart{z-index:3;border-radius:50%;font-size:21px!important;box-shadow:0 2px 10px #0000000d}
+.product-title h3 a{color:inherit}
+.card-add{display:flex;width:100%;align-items:center;justify-content:space-between;margin-top:13px;padding:14px 15px;border:1px solid #171717;background:#171717;color:#fff;font-size:11px;cursor:pointer;transition:background .2s,color .2s}
+.card-add:hover{background:#fff;color:#171717}.card-add span{font-size:17px}
+.bag-page-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.7fr);gap:54px;margin-top:38px;align-items:start}
+.bag-page-row{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid #e9e9e9}
+.bag-page-row:first-child{border-top:1px solid #e9e9e9}
+.bag-page-row img{width:100%;aspect-ratio:4/5;object-fit:cover;background:#f4f4f4}
+.bag-page-info h3{font:400 31px "Cormorant Garamond";margin:9px 0 4px}
+.bag-page-info p{font-size:11px;color:#777;margin:0 0 14px}
+.bag-page-info>strong{font-size:12px}
+.bag-qty{gap:18px!important;border:1px solid #e6e6e6;width:max-content;padding:7px 10px}
+.bag-qty button{font-size:15px}.bag-qty .bag-remove{font-size:9px;color:#777;margin-left:12px}
+.bag-summary{position:sticky;top:110px;padding:28px;background:#f7f7f5}
+.bag-summary h2{font:400 34px "Cormorant Garamond";margin:15px 0 20px}
+.bag-total{font-size:13px!important;padding:18px 0!important}
+.bag-checkout{width:100%;margin-top:22px;cursor:pointer}.bag-checkout:disabled{opacity:.35;cursor:not-allowed}
+.continue-link{display:block;text-align:center;margin-top:18px;font-size:10px;color:#555}
+.bag-note{font-size:9px;line-height:1.8;color:#888;text-align:center;margin:22px 0 0}
+.wishlist-toolbar{display:flex;justify-content:space-between;gap:15px;align-items:center;border-bottom:1px solid #e8e8e8;padding:20px 0;margin:20px 0 26px;font-size:10px;color:#777}
+.wishlist-toolbar a{color:#171717;text-decoration:underline;text-underline-offset:4px}
+.empty-state{text-align:center;padding:70px 20px;background:#f8f8f6;margin-top:30px}
+.empty-state>span{font:400 42px "Cormorant Garamond";color:#999}
+.empty-state h2{font:400 36px "Cormorant Garamond";margin:12px 0}
+.empty-state p{font-size:11px;color:#777;margin:0 0 24px}
+.route-grid .product{opacity:1;transform:none}
+@media(max-width:1000px){.headin{grid-template-columns:auto 1fr auto!important;gap:16px!important}.brand{justify-self:center!important}.desktop-nav{position:absolute;top:100%;left:0;right:0;display:flex!important;justify-content:center;background:#fff;padding:12px 15px;border-top:1px solid #eee;gap:18px!important}.head-actions{grid-column:3;grid-row:1}.mobile-toggle{grid-column:1;grid-row:1}.brand{grid-column:2;grid-row:1}.header{height:120px!important}}
+@media(max-width:800px){.header{height:76px!important}.headin{display:flex!important;justify-content:space-between!important;gap:10px!important}.brand{position:absolute!important;left:50%!important;transform:translateX(-50%)!important}.brand strong{font-size:22px!important}.brand small{font-size:7px!important}.desktop-nav{display:none!important}.head-actions{margin-left:auto;gap:10px!important}.header .saved-link,.header .bag{font-size:8px!important;letter-spacing:0!important}.bag-page-layout{grid-template-columns:1fr}.bag-summary{position:static}.bag-page-row{grid-template-columns:110px 1fr;gap:16px}.bag-page-info h3{font-size:26px}.wishlist-toolbar{align-items:flex-start;flex-direction:column}}
+@media(max-width:430px){.brand strong{font-size:18px!important}.brand small{letter-spacing:.2em!important}.mobile-toggle{width:34px;height:34px}.head-actions{gap:7px!important}.header .saved-link,.header .bag{font-size:7px!important}.bag-page-row{grid-template-columns:95px 1fr}.bag-qty{gap:11px!important}}
+
 </style>
 </head>
 <body>
 <div id="introLoader"><div class="loader-mark">VALLON NOIR</div><div class="loader-caption">MAISON DE PARFUMS</div><div class="loader-track"><span id="loaderFill"></span></div><div class="loader-percent" id="loaderPercent">00%</div></div><div id="scrollLoader"><span></span></div>
 
-<header class="header"><div class="wrap headin"><button class="mobile-toggle" aria-label="Open menu" onclick="openSidebar()">☰</button><a href="#" class="brand"><strong>VALLON NOIR</strong><small>MAISON DE PARFUMS</small></a><nav class="nav desktop-nav"><a href="#/collection">Collection</a><a href="#/about">About</a><a href="#/journal">Journal</a><a href="#/contact">Contact</a></nav><div class="head-actions"><button class="saved-link" onclick="location.hash='#/wishlist'">Saved (<span id="wishCount">0</span>)</button><button class="bag" onclick="openCart()">Bag (<span id="bagCount">0</span>)</button></div></div></header>
+<header class="header"><div class="wrap headin"><button class="mobile-toggle" aria-label="Open menu" onclick="openSidebar()">☰</button><a href="#" class="brand"><strong>VALLON NOIR</strong><small>MAISON DE PARFUMS</small></a><nav class="nav desktop-nav"><a href="#/collection">Collection</a><a href="#/about">About</a><a href="#/journal">Journal</a><a href="#/contact">Contact</a></nav><div class="head-actions"><button class="saved-link" onclick="location.hash='#/wishlist'">المفضلة (<span id="wishCount">0</span>)</button><button class="bag" onclick="openCart()">السلة (<span id="bagCount">0</span>)</button></div></div></header>
 <main id="homeView">
 <section class="hero"><div class="wrap"><div class="hero-copy"><div class="eyebrow">The art of being unforgettable</div><h1>Leave<br><i>an impression.</i></h1><p>Not simply worn. Remembered. Discover a modern fragrance wardrobe shaped by rare materials, quiet confidence and the poetry of contrast.</p><a class="cta" href="#collection">Discover the signature collection　→</a></div><div class="hero-meta">Grasse · Paris · Est. 2026</div></div></section>
 <div class="wrap"><section class="pillars"><div class="pillar"><span class="num">01</span><div><h3>Rare raw materials</h3><p>Sourced with discernment. Selected for character, not convention.</p></div></div><div class="pillar"><span class="num">02</span><div><h3>Slow composition</h3><p>Each formula is given the time and space it deserves.</p></div></div><div class="pillar"><span class="num">03</span><div><h3>Made to be remembered</h3><p>A personal signature that lingers beyond the moment.</p></div></div></section>
@@ -209,15 +252,13 @@ function persistStore(){try{localStorage.setItem('vn-cart',JSON.stringify(cart))
 const money=n=>n.toLocaleString('en-US')+' EGP';
 function renderFilters(){document.getElementById('filters').innerHTML=families.map(f=>'<button class="'+(family===f?'active':'')+'" onclick="family=\''+f+'\';render()">'+f+'</button>').join('')}
 function render(){renderFilters();visibleCount=6;let list=items.filter(p=>(family==='All'||p.family===family)&&(p.name+' '+p.subtitle+' '+p.family).toLowerCase().includes(document.getElementById('search').value.toLowerCase()));let sort=document.getElementById('sort').value;if(sort==='low')list.sort((a,b)=>a.price-b.price);if(sort==='high')list.sort((a,b)=>b.price-a.price);filteredProducts=list;drawProducts();}
-function drawProducts(){if(productObserver)productObserver.disconnect();if(loadObserver)loadObserver.disconnect();const shown=filteredProducts.slice(0,visibleCount);document.getElementById('products').innerHTML=shown.map(p=>'<article class="product"><div class="photo"><img loading="lazy" src="'+p.img+'" alt="'+p.name+'"><span class="tag">'+p.tag+'</span><button class="heart '+(wish.includes(p.id)?'on':'')+'" onclick="toggleWish(\''+p.id+'\')">'+(wish.includes(p.id)?'♥':'♡')+'</button><button class="quick" onclick="add(\''+p.id+'\')">Add to bag　＋</button></div><div class="product-title"><div><h3>'+p.name+'</h3><p>'+p.subtitle+'</p></div><span class="price">'+money(p.price)+'</span></div><div class="product-foot"><span>'+p.family+'</span><button onclick="showProduct(\''+p.id+'\')">Discover　→</button></div></article>').join('')||'<p>No fragrances found. Try another search.</p>';
-if(visibleCount<filteredProducts.length){document.getElementById('products').insertAdjacentHTML('beforeend','<div class="loading-more" id="loadingMore">Discovering more compositions</div>');loadObserver=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){loadObserver.disconnect();setTimeout(()=>{visibleCount=Math.min(visibleCount+6,filteredProducts.length);drawProducts()},650)}},{rootMargin:'220px'});loadObserver.observe(document.getElementById('loadingMore'));}
-productObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');productObserver.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.product:not(.visible)').forEach(el=>productObserver.observe(el));}
+function drawProducts(){if(productObserver)productObserver.disconnect();if(loadObserver)loadObserver.disconnect();const shown=filteredProducts.slice(0,visibleCount);document.getElementById('products').innerHTML=shown.map(p=>'<article class="product"><div class="photo product-photo" role="link" tabindex="0" onclick="showProduct(\''+p.id+'\')" onkeydown="if(event.key===\'Enter\')showProduct(\''+p.id+'\')"><img loading="lazy" decoding="async" src="'+p.img+'" alt="'+p.name+'"><span class="tag">'+p.tag+'</span><button class="heart '+(wish.includes(p.id)?'on':'')+'" aria-label="Add to wishlist" onclick="event.stopPropagation();toggleWish(\''+p.id+'\')">'+(wish.includes(p.id)?'♥':'♡')+'</button><span class="photo-hint">View details ↗</span></div><div class="product-title"><div><h3><a href="#/product/'+p.id+'">'+p.name+'</a></h3><p>'+p.subtitle+'</p></div><span class="price">'+money(p.price)+'</span></div><div class="product-foot"><span>'+p.family+'</span><span>Vallon Noir</span></div><button class="card-add" onclick="add(\''+p.id+'\')">أضف إلى السلة <span>＋</span></button></article>').join('')||'<p>لم يتم العثور على عطور — No fragrances found.</p>';if(visibleCount<filteredProducts.length){document.getElementById('products').insertAdjacentHTML('beforeend','<div class="loading-more" id="loadingMore">Discovering more compositions</div>');loadObserver=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){loadObserver.disconnect();setTimeout(()=>{visibleCount=Math.min(visibleCount+6,filteredProducts.length);drawProducts()},450)}},{rootMargin:'220px'});loadObserver.observe(document.getElementById('loadingMore'));}productObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');productObserver.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.product:not(.visible)').forEach(el=>productObserver.observe(el));}
 function toggleWish(id){wish=wish.includes(id)?wish.filter(x=>x!==id):[...wish,id];persistStore();render();updateCart();toast(wish.includes(id)?'Saved to your private selection':'Removed from your private selection')}
 function add(id){let found=cart.find(x=>x.id===id);if(found)found.qty++;else cart.push({id,qty:1});persistStore();updateCart();toast(items.find(x=>x.id===id).name+' added to your bag')}
 function showProduct(id){location.hash='#/product/'+id;return;selected=items.find(x=>x.id===id);document.getElementById('modalImg').src=selected.img;document.getElementById('modalImg').alt=selected.name;document.getElementById('modalFamily').textContent=selected.family;document.getElementById('modalName').textContent=selected.name;document.getElementById('modalSubtitle').textContent=selected.subtitle;document.getElementById('modalDesc').textContent=selected.desc;document.getElementById('modalPrice').textContent=money(selected.price);document.getElementById('modalNotes').innerHTML=selected.notes.map(n=>'<span>'+n+'</span>').join('');document.getElementById('productModal').classList.add('show')}
 function closeModal(){document.getElementById('productModal').classList.remove('show')}
 function addSelected(){if(selected)add(selected.id);closeModal();openCart()}
-function openCart(){location.hash='#/checkout';}
+function openCart(){location.hash='#/cart';}
 function openWishlist(){drawerMode='wishlist';updateCart();document.getElementById('cartDrawer').classList.add('show')}
 function closeCart(){document.getElementById('cartDrawer').classList.remove('show')}
 function updateQty(id,delta){let x=cart.find(x=>x.id===id);if(x)x.qty+=delta;cart=cart.filter(x=>x.qty>0);persistStore();updateCart()}
@@ -245,7 +286,7 @@ render();updateCart();let introProgress=0;const introTimer=setInterval(()=>{intr
 
 function openSidebar(){document.getElementById('mobileSidebar').classList.add('open')}
 function closeSidebar(){document.getElementById('mobileSidebar').classList.remove('open')}
-function routeProductCard(p){return '<article class="product visible"><a href="#/product/'+p.id+'"><div class="photo"><img loading="lazy" decoding="async" src="'+p.img+'" alt="'+p.name+'"><span class="tag">'+p.tag+'</span></div></a><div class="product-title"><div><h3><a href="#/product/'+p.id+'">'+p.name+'</a></h3><p>'+p.subtitle+'</p></div><span class="price">'+money(p.price)+'</span></div><div class="product-foot"><span>'+p.family+'</span><button onclick="add(\''+p.id+'\')">Add to bag +</button></div></article>'}
+function routeProductCard(p){return '<article class="product visible"><div class="photo product-photo" role="link" tabindex="0" onclick="location.hash=\'#/product/'+p.id+'\'" onkeydown="if(event.key===\'Enter\')location.hash=\'#/product/'+p.id+'\'"><img loading="lazy" decoding="async" src="'+p.img+'" alt="'+p.name+'"><span class="tag">'+p.tag+'</span><button class="heart '+(wish.includes(p.id)?'on':'')+'" aria-label="Add to wishlist" onclick="event.stopPropagation();toggleWish(\''+p.id+'\')">'+(wish.includes(p.id)?'♥':'♡')+'</button><span class="photo-hint">View details ↗</span></div><div class="product-title"><div><h3><a href="#/product/'+p.id+'">'+p.name+'</a></h3><p>'+p.subtitle+'</p></div><span class="price">'+money(p.price)+'</span></div><div class="product-foot"><span>'+p.family+'</span><span>Vallon Noir</span></div><button class="card-add" onclick="add(\''+p.id+'\')">أضف إلى السلة <span>＋</span></button></article>'}
 function routeShell(kicker,title,body){return '<div class="route-wrap route-enter"><div class="route-kicker">'+kicker+'</div><h1 class="route-title">'+title+'</h1>'+body+'</div>'}
 function renderRoute(){
  const raw=location.hash.replace(/^#\/?/,'');const parts=raw.split('/');const route=parts[0]||'home';const id=parts[1];const home=document.getElementById('homeView'),view=document.getElementById('routeView');
