@@ -522,6 +522,96 @@ html,body,#routeView{background:#11100f!important;color:#f1ece3!important}
  .bag-page-row:hover,.order-history-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px #0004;border-color:#c6a16b!important}
 }
 @media(prefers-reduced-motion:reduce){.product .photo,.product .photo img,.bag-page-row,.order-history-card{transform:none!important;transition:none!important}}
+
+/* VALLON NOIR — phase one motion + product stage system */
+:root{--vn-motion:cubic-bezier(.2,.72,.22,1);--vn-gold:#c6a16b}
+#mobileSidebar{z-index:1200;display:flex;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .32s var(--vn-motion),visibility .32s}
+#mobileSidebar.open{visibility:visible;opacity:1;pointer-events:auto}
+#mobileSidebar .sidebar-panel{transform:translateX(28px);transition:transform .42s var(--vn-motion);display:flex;flex-direction:column;max-height:100dvh}
+#mobileSidebar.open .sidebar-panel{transform:translateX(0)}
+.vn-sidebar-caption{display:block;margin-top:5px;font-size:9px;letter-spacing:.24em;color:var(--muted)}
+.vn-sidebar-scroll{overflow-y:auto;padding:10px 0 28px;overscroll-behavior:contain}
+.vn-sidebar-group{padding:18px 0;border-bottom:1px solid var(--line)}
+.vn-sidebar-label{display:block;padding:0 0 8px;color:var(--gold);font-size:9px;letter-spacing:.22em}
+#mobileSidebar .sidebar-link{display:flex;align-items:center;min-height:42px;padding:9px 0;border-bottom:0;font-size:13px;transition:color .2s,transform .25s var(--vn-motion)}
+#mobileSidebar .sidebar-link:hover{color:var(--gold);transform:translateX(5px)}
+.vn-sidebar-bottom{padding-top:18px}
+.vn-sidebar-bottom>span{display:block;margin-top:18px;color:var(--muted);font-size:8px;letter-spacing:.16em}
+.vn-product-stage{--rx:0deg;--ry:0deg;position:relative;isolation:isolate;display:grid;place-items:center;min-height:460px;overflow:hidden;background:radial-gradient(ellipse at 50% 48%,rgba(198,161,107,.13),transparent 54%),linear-gradient(145deg,#1b1a17,#0d0d0c);border:1px solid rgba(198,161,107,.2);perspective:1100px}
+.vn-product-stage:before,.vn-product-stage:after{content:"";position:absolute;inset:12%;border:1px solid rgba(198,161,107,.17);border-radius:50%;transform:rotateX(68deg) rotateZ(-18deg);pointer-events:none}
+.vn-product-stage:after{inset:20%;transform:rotateX(68deg) rotateZ(34deg);border-color:rgba(238,233,223,.12)}
+.vn-product-stage .detail-image{position:relative;z-index:2;width:min(72%,360px);height:390px;object-fit:contain;filter:drop-shadow(0 30px 28px #0009);transform:rotateX(var(--rx)) rotateY(var(--ry)) translateZ(34px);transition:transform .16s ease-out,filter .4s;will-change:transform}
+.vn-product-stage:hover .detail-image{filter:drop-shadow(0 38px 34px #000b)}
+.vn-stage-orbit{position:absolute;width:76%;aspect-ratio:1;border:1px solid rgba(198,161,107,.32);border-radius:50%;transform:rotateX(68deg) rotateZ(-20deg);animation:vnOrbit 18s linear infinite}
+.vn-stage-orbit:after{content:"";position:absolute;top:8%;left:13%;width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 18px var(--gold)}
+.vn-stage-caption{position:absolute;z-index:3;bottom:18px;left:20px;right:20px;display:flex;justify-content:space-between;gap:12px;color:#b9ad9a;font-size:8px;letter-spacing:.2em}
+.vn-stage-caption span:last-child{color:var(--gold)}
+.vn-stage-index{position:absolute;top:18px;right:20px;color:rgba(238,233,223,.38);font:italic 15px Georgia}
+.vn-motion-ready .product,.vn-motion-ready .signature-card,.vn-motion-ready .note-world-card,.vn-motion-ready .journal-card{animation:vnFadeUp .7s var(--vn-motion) both}
+.vn-motion-ready .product:nth-child(2n){animation-delay:.06s}
+.vn-motion-ready .product:nth-child(3n){animation-delay:.12s}
+.vn-motion-ready .product:nth-child(4n){animation-delay:.18s}
+.vn-reveal{animation:vnReveal .8s var(--vn-motion) both}
+.vn-hover-lift{transition:transform .35s var(--vn-motion),box-shadow .35s var(--vn-motion)}
+.vn-hover-lift:hover{transform:translateY(-7px);box-shadow:0 22px 48px #0005}
+.vn-link-line{position:relative}
+.vn-link-line:after{content:"";position:absolute;left:0;bottom:-4px;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .35s}
+.vn-link-line:hover:after{transform:scaleX(1);transform-origin:left}
+.vn-shimmer{background-image:linear-gradient(100deg,transparent 20%,rgba(255,255,255,.13) 45%,transparent 70%);background-size:220% 100%;animation:vnShimmer 2.8s ease-in-out infinite}
+.vn-heart-pop{animation:vnHeartPop .42s var(--vn-motion)}
+.vn-toast-in{animation:vnToast .38s var(--vn-motion)}
+.vn-focus-ring:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
+.vn-parallax-lite{transform:translate3d(0,var(--vn-shift,0px),0)}
+.vn-soft-glow:hover{box-shadow:0 0 0 1px rgba(198,161,107,.5),0 14px 42px rgba(198,161,107,.12)}
+.vn-press:active{transform:scale(.975)}
+.vn-fade-in{animation:vnFade .7s ease both}
+.vn-scale-in{animation:vnScaleIn .65s var(--vn-motion) both}
+.vn-slide-in{animation:vnSlideIn .65s var(--vn-motion) both}
+.vn-slide-out{animation:vnSlideOut .65s var(--vn-motion) both}
+.vn-blur-in{animation:vnBlurIn .8s var(--vn-motion) both}
+.vn-text-rise{animation:vnTextRise .8s var(--vn-motion) both}
+.vn-border-glow{animation:vnBorderGlow 3.2s ease-in-out infinite}
+.vn-float{animation:vnFloat 5s ease-in-out infinite}
+.vn-bob{animation:vnBob 3.6s ease-in-out infinite}
+.vn-rotate-slow{animation:vnRotate 22s linear infinite}
+.vn-pulse-soft{animation:vnPulse 3s ease-in-out infinite}
+.vn-clip-reveal{animation:vnClipReveal .9s var(--vn-motion) both}
+.vn-sweep{position:relative;overflow:hidden}
+.vn-sweep:after{content:"";position:absolute;inset:-20% auto -20% -45%;width:35%;background:linear-gradient(90deg,transparent,#ffffff18,transparent);transform:skewX(-18deg);animation:vnSweep 4.5s ease-in-out infinite;pointer-events:none}
+.vn-tilt-card{transform-style:preserve-3d;transition:transform .18s ease-out}
+.vn-tilt-card:hover{box-shadow:0 22px 45px #0006}
+.vn-ripple{position:relative;overflow:hidden}
+.vn-ripple:after{content:"";position:absolute;inset:0;border:1px solid rgba(198,161,107,.6);opacity:0;transform:scale(.8);pointer-events:none}
+.vn-ripple:active:after{animation:vnRipple .5s ease-out}
+.vn-orbit{animation:vnOrbit 16s linear infinite}
+.vn-zoom-image img{transition:transform .8s var(--vn-motion)}
+.vn-zoom-image:hover img{transform:scale(1.06)}
+.vn-accent-line{background:linear-gradient(90deg,var(--gold),transparent);height:1px;transform-origin:left;animation:vnLineGrow 1.1s var(--vn-motion) both}
+.vn-spring{transition:transform .42s cubic-bezier(.2,1.6,.35,1)}
+.vn-spring:hover{transform:translateY(-4px) scale(1.025)}
+@keyframes vnFadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes vnFade{from{opacity:0}to{opacity:1}}
+@keyframes vnScaleIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+@keyframes vnSlideIn{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:translateX(0)}}
+@keyframes vnSlideOut{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:translateX(0)}}
+@keyframes vnBlurIn{from{opacity:0;filter:blur(9px)}to{opacity:1;filter:blur(0)}}
+@keyframes vnTextRise{from{opacity:0;transform:translateY(18px);letter-spacing:.18em}to{opacity:1;transform:none;letter-spacing:normal}}
+@keyframes vnBorderGlow{0%,100%{box-shadow:0 0 0 rgba(198,161,107,0)}50%{box-shadow:0 0 24px rgba(198,161,107,.15)}}
+@keyframes vnFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes vnBob{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-5px) rotate(1deg)}}
+@keyframes vnRotate{to{transform:rotate(360deg)}}
+@keyframes vnPulse{0%,100%{opacity:.72}50%{opacity:1}}
+@keyframes vnClipReveal{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes vnSweep{0%,55%{left:-45%}100%{left:130%}}
+@keyframes vnRipple{0%{opacity:.8;transform:scale(.82)}100%{opacity:0;transform:scale(1.08)}}
+@keyframes vnOrbit{to{transform:rotateX(68deg) rotateZ(340deg)}}
+@keyframes vnShimmer{0%,100%{background-position:100% 0}50%{background-position:-100% 0}}
+@keyframes vnHeartPop{0%{transform:scale(.75)}55%{transform:scale(1.3)}100%{transform:scale(1)}}
+@keyframes vnToast{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes vnReveal{from{opacity:0;clip-path:inset(0 0 18% 0)}to{opacity:1;clip-path:inset(0 0 0 0)}}
+@keyframes vnLineGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(max-width:760px){.vn-product-stage{min-height:340px}.vn-product-stage .detail-image{height:290px;width:78%}.vn-stage-caption{font-size:7px;left:12px;right:12px}.vn-sidebar-scroll{padding-bottom:18px}}
+@media(prefers-reduced-motion:reduce){#mobileSidebar,#mobileSidebar .sidebar-panel,.vn-product-stage *,[class*="vn-"]{animation:none!important;transition:none!important;scroll-behavior:auto!important}.vn-product-stage .detail-image{transform:none!important}html{scroll-behavior:auto!important}}
 </style></head>
 <body>
 <div id="introLoader"><div class="loader-mark">VALLON NOIR</div><div class="loader-caption">MAISON DE PARFUMS</div><div class="loader-track"><span id="loaderFill"></span></div><div class="loader-percent" id="loaderPercent">00%</div></div><div id="scrollLoader"><span></span></div>
@@ -539,7 +629,7 @@ html,body,#routeView{background:#11100f!important;color:#f1ece3!important}
 <footer class="footer"><div class="wrap"><div class="footgrid"><div><div class="footbrand">VALLON NOIR</div><div class="eyebrow" style="margin-top:10px">Maison de Parfums Masculins</div></div><div><p>Grasse · Paris</p><p>Compositions of character, made to be remembered.</p><a href="#/collection">Explore the collection ↗</a></div><div><p>Have a question?</p><a href="mailto:maison@vallonnoir.example">Contact the maison ↗</a><p><a href="#/track">Track an order · تتبع طلبك</a></p></div></div><div class="footend"><span>© 2026 Vallon Noir. All rights reserved.</span><span>Designed with intention.</span></div><div class="site-footer-credit"><span>Crafted as a digital experience by</span><button class="codex-trigger" onclick="openCodex()" aria-label="Discover the CODΞX project notes">CODΞX ✳</button><span>·</span><a href="https://karimmohammedkadry-alt.github.io/PROTOFLIO-CODEX/" target="_blank" rel="noopener noreferrer">View portfolio ↗</a></div></div></div></footer>
 <div class="codex-modal" id="codexModal" onclick="if(event.target===this)closeCodex()"><section class="codex-panel" role="dialog" aria-modal="true" aria-labelledby="codexTitle"><button class="codex-close" onclick="closeCodex()" aria-label="Close">×</button><div class="eyebrow">THE DIGITAL CRAFT · CODΞX</div><h2 id="codexTitle">A signature<br><i>behind the experience.</i></h2><p>CODΞX is the creative and development signature behind this presentation — shaping the visual language, responsive experience and small interactions that bring the Vallon Noir maison to life.</p><div class="codex-meta"><div><small>Art direction</small><strong>Noir editorial</strong></div><div><small>Experience</small><strong>Motion & detail</strong></div><div><small>Build</small><strong>Responsive front-end</strong></div><div><small>Mode</small><strong>Demo · Local only</strong></div></div><p>Designed for presentation. No backend, database, live payments or server-side newsletter subscription is connected.</p><a class="route-btn" href="https://karimmohammedkadry-alt.github.io/PROTOFLIO-CODEX/" target="_blank" rel="noopener noreferrer">Explore the CODΞX portfolio ↗</a></section></div>
 <div class="overlay" id="productModal" onclick="if(event.target===this)closeModal()"><div class="modal"><button class="close" onclick="closeModal()">×</button><img loading="lazy" decoding="async" id="modalImg" alt=""><div class="modal-copy"><div class="eyebrow" id="modalFamily"></div><h2 id="modalName"></h2><p id="modalSubtitle"></p><p id="modalDesc"></p><div class="modal-notes"><div class="eyebrow">Olfactive notes</div><div id="modalNotes"></div></div><div class="modal-bottom"><strong id="modalPrice"></strong><button class="cta" style="margin:0" onclick="addSelected()">Add to bag　→</button></div></div></div></div>
-<div class="drawer" id="cartDrawer" onclick="if(event.target===this)closeCart()"><aside class="drawer-panel"><div class="drawer-head"><div><div class="eyebrow" id="drawerEyebrow">Your selection</div><div class="serif" style="font-size:29px" id="drawerTitle">The bag (<span id="drawerCount">0</span>)</div></div><button class="close" style="position:static" onclick="closeCart()">×</button></div><div class="drawer-body" id="cartItems"></div><div class="drawer-foot" id="cartFoot"></div></aside></div><div class="toast" id="toast"></div><div id="mobileSidebar" onclick="if(event.target===this)closeSidebar()"><aside class="sidebar-panel"><div class="sidebar-top"><strong>VALLON NOIR</strong><button class="sidebar-close" onclick="closeSidebar()">×</button></div><a class="sidebar-link" href="#/" onclick="closeSidebar()">Home</a><a class="sidebar-link" href="#/collection" onclick="closeSidebar()">Collection</a><a class="sidebar-link" href="#/wishlist" onclick="closeSidebar()">Wishlist</a><a class="sidebar-link" href="#/about" onclick="closeSidebar()">About</a><a class="sidebar-link" href="#/journal" onclick="closeSidebar()">Journal</a><a class="sidebar-link" href="#/contact" onclick="closeSidebar()">Contact</a><a class="sidebar-link" href="#/checkout" onclick="closeSidebar()">Checkout</a><a class="sidebar-link" href="#/orders" onclick="closeSidebar()">My orders · طلباتي</a><a class="sidebar-link" href="#/track" onclick="closeSidebar()">Track order · تتبع الطلب</a><a class="sidebar-link" href="#/quiz" onclick="closeSidebar()">Find your signature</a><a class="sidebar-link" href="#/explorer" onclick="closeSidebar()">Olfactory explorer</a><a class="sidebar-link" href="#/gift" onclick="closeSidebar()">Gift atelier</a><a class="sidebar-link" href="#/campaign" onclick="closeSidebar()">Campaign room</a><a class="sidebar-link" href="#/case" onclick="closeSidebar()">CODΞX case study</a></aside></div>
+<div class="drawer" id="cartDrawer" onclick="if(event.target===this)closeCart()"><aside class="drawer-panel"><div class="drawer-head"><div><div class="eyebrow" id="drawerEyebrow">Your selection</div><div class="serif" style="font-size:29px" id="drawerTitle">The bag (<span id="drawerCount">0</span>)</div></div><button class="close" style="position:static" onclick="closeCart()">×</button></div><div class="drawer-body" id="cartItems"></div><div class="drawer-foot" id="cartFoot"></div></aside></div><div class="toast" id="toast"></div><div id="mobileSidebar" onclick="if(event.target===this)closeSidebar()" aria-hidden="true"><aside class="sidebar-panel" aria-label="Main navigation"><div class="sidebar-top"><div><strong>VALLON NOIR</strong><span class="vn-sidebar-caption">MAISON DE PARFUMS</span></div><button class="sidebar-close" aria-label="Close menu" onclick="closeSidebar()">×</button></div><div class="vn-sidebar-scroll"><div class="vn-sidebar-group"><span class="vn-sidebar-label">DISCOVER</span><a class="sidebar-link" href="#/">Home</a><a class="sidebar-link" href="#/collection">The collection</a><a class="sidebar-link" href="#/about">The maison</a><a class="sidebar-link" href="#/journal">Journal</a></div><div class="vn-sidebar-group"><span class="vn-sidebar-label">YOUR SELECTION</span><a class="sidebar-link" href="#/wishlist">Saved compositions</a><a class="sidebar-link" href="#/checkout">Your bag & checkout</a><a class="sidebar-link" href="#/orders">Order history</a><a class="sidebar-link" href="#/track">Track an order</a></div><div class="vn-sidebar-group"><span class="vn-sidebar-label">THE ATELIER</span><a class="sidebar-link" href="#/quiz">Find your signature</a><a class="sidebar-link" href="#/explorer">Olfactory explorer</a><a class="sidebar-link" href="#/gift">Gift atelier</a><a class="sidebar-link" href="#/campaign">Campaign room</a><a class="sidebar-link" href="#/case">CODΞX case study</a></div><div class="vn-sidebar-bottom"><a class="sidebar-link" href="#/contact">Contact the maison ↗</a><span>COMPOSED WITH INTENTION · VALLON NOIR</span></div></div></aside></div>
 <script>function toggleMobileNav(force){const nav=document.getElementById("mobileNav");const btn=document.querySelector(".mobile-toggle");const open=force===undefined?!nav.classList.contains("open"):force;nav.classList.toggle("open",open);if(btn)btn.setAttribute("aria-expanded",String(open));}
 const items=[
 {id:'nocturne',name:'Nocturne Extrait',subtitle:'Smoked Atlas Cedar · Black Frankincense',family:'Woody & Smoke',price:5800,tag:'Signature',img:'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=640&q=68',notes:['Black Pepper','Frankincense','Atlas Cedar'],desc:'A nocturnal composition of charred Atlas cedar, Omani frankincense and cold volcanic minerality. Deep, composed, unforgettable.'},
@@ -752,5 +842,23 @@ function toggleWish(id){const wasSaved=wish.includes(id);const source=document.a
 function add(id){const p=items.find(x=>x.id===id);if(!p)return;const source=document.activeElement&&document.activeElement.closest?document.activeElement.closest('.product,.detail-layout,.bag-page-row'):null;const found=cart.find(x=>x.id===id);if(found)found.qty++;else cart.push({id,qty:1});persistStore();vnFlyTo(document.querySelector('.vn-icon-actions .bag'),source);updateCart();if(location.hash==='#/cart')renderRoute();toast(p.name+' added to your bag')}
 function updateQty(id,delta){const x=cart.find(x=>x.id===id);if(!x)return;x.qty+=delta;cart=cart.filter(x=>x.qty>0);persistStore();updateCart();if(location.hash==='#/cart')renderRoute()}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeSidebar();closeCart();closeModal()}});
+
+/* Phase one: unified drawer state, reduced-motion-aware effects and 3D product presentation. */
+function openSidebar(){const el=document.getElementById('mobileSidebar');if(!el)return;el.classList.add('open');el.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';const b=document.querySelector('.vn-menu-trigger');if(b)b.setAttribute('aria-expanded','true')}
+function closeSidebar(){const el=document.getElementById('mobileSidebar');if(el){el.classList.remove('open');el.setAttribute('aria-hidden','true')}if(!document.getElementById('cartDrawer')?.classList.contains('show')&&!document.getElementById('productModal')?.classList.contains('show'))document.body.style.overflow='';const b=document.querySelector('.vn-menu-trigger');if(b)b.setAttribute('aria-expanded','false')}
+function openCart(){closeSidebar();if(location.hash==='#/cart'){renderRoute();return}vnNavigate('#/cart')}
+function openWishlist(){closeSidebar();if(location.hash==='#/wishlist'){renderRoute();return}vnNavigate('#/wishlist')}
+function closeCart(){const d=document.getElementById('cartDrawer');if(d)d.classList.remove('show');document.body.style.overflow=''}
+function updateQty(id,delta){const x=cart.find(x=>x.id===id);if(!x)return;x.qty+=delta;cart=cart.filter(x=>x.qty>0);persistStore();updateCart();if(location.hash==='#/cart')renderRoute()}
+function add(id){const p=items.find(x=>x.id===id);if(!p)return;const found=cart.find(x=>x.id===id);if(found)found.qty++;else cart.push({id,qty:1});persistStore();updateCart();toast(p.name+' added to your bag');}
+function toggleWish(id){const exists=wish.includes(id);wish=exists?wish.filter(x=>x!==id):[...wish,id];persistStore();updateCart();const active=document.activeElement;const card=active&&active.closest?active.closest('.product,.detail-layout,.bag-page-row'):null;const heart=card&&card.querySelector('.heart');if(heart){heart.classList.toggle('on',!exists);heart.textContent=exists?'♡':'♥';heart.classList.remove('vn-heart-pop');void heart.offsetWidth;heart.classList.add('vn-heart-pop')}if(location.hash==='#/wishlist')renderRoute();toast(exists?'Removed from wishlist':'Added to wishlist')}
+function vnAttachProductStage(){const img=document.querySelector('#routeView .detail-image');if(!img||img.parentElement.classList.contains('vn-product-stage'))return;const stage=document.createElement('div');stage.className='vn-product-stage vn-reveal';stage.setAttribute('aria-label','Interactive three-dimensional product presentation');const orbit=document.createElement('span');orbit.className='vn-stage-orbit';orbit.setAttribute('aria-hidden','true');const index=document.createElement('span');index.className='vn-stage-index';index.textContent='V / N';index.setAttribute('aria-hidden','true');const caption=document.createElement('div');caption.className='vn-stage-caption';caption.innerHTML='<span>OBJECT STUDY · 01</span><span>MOVE POINTER TO EXPLORE</span>';img.parentNode.insertBefore(stage,img);stage.append(orbit,index,img,caption);stage.addEventListener('pointermove',e=>{if(e.pointerType==='touch'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const r=stage.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;stage.style.setProperty('--ry',(x*15)+'deg');stage.style.setProperty('--rx',(-y*12)+'deg')},{passive:true});stage.addEventListener('pointerleave',()=>{stage.style.setProperty('--ry','0deg');stage.style.setProperty('--rx','0deg')},{passive:true})}
+function vnApplyMotion(){const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;document.body.classList.add('vn-motion-ready');if(reduced)return;document.querySelectorAll('.route-title,.hero h1,.hero-title,.section-title').forEach(el=>el.classList.add('vn-text-rise'));document.querySelectorAll('.route-btn,.cta,.card-add,.signature-options button').forEach(el=>el.classList.add('vn-press','vn-ripple','vn-spring'));document.querySelectorAll('.product .photo,.detail-image').forEach(el=>el.classList.add('vn-zoom-image'));document.querySelectorAll('.product,.signature-card,.note-world-card,.journal-card,.bag-page-row').forEach(el=>el.classList.add('vn-hover-lift'));document.querySelectorAll('.eyebrow').forEach(el=>el.classList.add('vn-link-line'))}
+let vnMotionFrame=0;function vnScheduleEnhancements(){cancelAnimationFrame(vnMotionFrame);vnMotionFrame=requestAnimationFrame(()=>{vnApplyMotion();vnAttachProductStage()})}
+document.addEventListener('DOMContentLoaded',vnScheduleEnhancements,{once:true});
+const vnRouteObserver=new MutationObserver(()=>vnScheduleEnhancements());const vnRouteRoot=document.getElementById('routeView');if(vnRouteRoot)vnRouteObserver.observe(vnRouteRoot,{childList:true,subtree:true});
+document.addEventListener('click',e=>{const link=e.target.closest('#mobileSidebar a');if(link)closeSidebar()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeSidebar();closeCart();if(typeof closeModal==='function')closeModal()}});
+vnScheduleEnhancements();
 </script>
 </body></html>
