@@ -291,12 +291,66 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:1px solid var(-
 @media(max-width:700px){.signature-cards{grid-template-columns:1fr 1fr}.signature-two,.signature-compare,.signature-case-grid{grid-template-columns:1fr}.signature-result{grid-template-columns:100px 1fr}.signature-result img{height:145px}.signature-campaign{min-height:330px}}
 @media(max-width:430px){.signature-cards{grid-template-columns:1fr}.signature-options button{flex:1 1 40%}}
 
+
+/* CODΞX UX refinement */
+.language-toggle{display:none!important}
+.header{height:82px!important;z-index:120!important;box-shadow:0 5px 24px #00000008}
+.headin{display:grid!important;grid-template-columns:1fr auto 1fr!important;gap:20px}
+.brand{position:static!important;transform:none!important;justify-self:start}
+.nav{justify-self:center;gap:clamp(12px,1.8vw,26px)!important}
+.head-actions{justify-self:end;display:flex!important;align-items:center;gap:10px!important}
+.head-actions .saved-link,.head-actions .bag,.compare-head{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;padding:0 11px;border:1px solid #e8e8e8!important;border-radius:3px;background:#fff!important;color:#171717!important;font-size:9px!important;letter-spacing:.12em!important;transition:all .25s}
+.head-actions .saved-link:hover,.head-actions .bag:hover,.compare-head:hover{background:#171717!important;color:#fff!important;border-color:#171717!important;transform:translateY(-2px)}
+.head-actions b{font-size:9px;font-weight:600;min-width:17px;height:17px;display:inline-grid;place-items:center;border-radius:50%;background:#f1eee9;color:#171717}
+.action-symbol{font:22px/1 Georgia,serif}.compare-head{white-space:nowrap}
+@media(max-width:1000px){.headin{grid-template-columns:auto 1fr auto!important}.nav{display:none!important}.brand{justify-self:center;position:absolute!important;left:50%;transform:translateX(-50%)!important}.head-actions{gap:6px!important}.compare-head,.head-actions .saved-link,.head-actions .bag{padding:0 9px;min-width:40px}.action-label,.compare-head>span:last-child{display:none}}
+@media(max-width:520px){.header{height:70px!important}.wrap{padding-left:16px;padding-right:16px}.head-actions{gap:5px!important}.head-actions .saved-link,.head-actions .bag,.compare-head{height:38px;min-height:38px;padding:0 7px}.brand strong{font-size:20px!important;letter-spacing:.13em!important}.brand small{font-size:6px!important}.mobile-toggle{width:36px;height:36px}}
+.grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:48px 22px!important}
+.product{min-width:0;background:#fff;border:1px solid #eceae6;padding-bottom:16px;overflow:hidden;transition:transform .35s,box-shadow .35s,border-color .35s!important}
+.product:hover{transform:translateY(-5px)!important;box-shadow:0 18px 45px #17171712;border-color:#d7d1c7}
+.photo{aspect-ratio:4/4.7!important;border:0!important;background:linear-gradient(145deg,#f4f1eb,#e7e1d6)!important}
+.photo img{object-fit:cover!important;transition:transform .8s cubic-bezier(.2,.7,.2,1)!important}
+.product:hover .photo img{transform:scale(1.055)!important}
+.product-title{padding:17px 16px 0!important;align-items:flex-start}
+.product-title h3{font-size:clamp(21px,2vw,28px)!important;line-height:1.05}
+.product-title p{font-size:10px!important;line-height:1.7}
+.price{font-weight:600;color:#171717!important}
+.product-foot{margin:12px 16px 0!important;padding-top:12px!important}
+.card-add{display:flex!important;width:calc(100% - 32px)!important;margin:14px 16px 0!important;min-height:46px!important;align-items:center;justify-content:space-between;padding:0 14px!important;background:#171717!important;color:#fff!important;border:1px solid #171717!important;font-size:9px!important;letter-spacing:.14em!important;text-transform:uppercase!important;transition:all .25s!important}
+.card-add:hover{background:#fff!important;color:#171717!important;transform:translateY(-2px)}
+.heart{width:42px!important;height:42px!important;display:grid;place-items:center;border-radius:50%!important;font-size:23px!important;box-shadow:0 4px 18px #00000012;transition:transform .25s!important}
+.heart:hover{transform:scale(1.1)}.heart.on{background:#171717!important;color:#fff!important}
+.tag{border-radius:2px;font-size:8px!important;letter-spacing:.13em!important}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:24px 12px!important}.product-title{padding:13px 11px 0!important}.product-foot{margin:10px 11px 0!important}.card-add{width:calc(100% - 22px)!important;margin:12px 11px 0!important;min-height:42px!important;font-size:8px!important}.heart{width:36px!important;height:36px!important}.tag{top:9px!important;left:9px!important;padding:7px 9px!important}}
+@media(max-width:390px){.grid{gap:18px 9px!important}.product-title h3{font-size:19px!important}.product-title p{font-size:9px!important}.price{font-size:9px!important}}
+.drawer{z-index:160!important;backdrop-filter:blur(5px)}
+.drawer-panel{width:min(480px,100%)!important;box-shadow:-24px 0 70px #0002!important;background:#fff!important;color:#171717!important;border:0!important;animation:drawerIn .35s cubic-bezier(.2,.7,.2,1)}
+.drawer-head{padding:25px 28px!important;align-items:center}.drawer-body{padding:22px 28px!important}
+.cart-row{gap:16px!important;padding-bottom:18px!important}.cart-row img{width:94px!important;height:116px!important;background:#f1eee9;object-fit:cover!important}.cart-row h4{font-size:25px!important;color:#171717!important}.cart-row p{color:#777!important}
+.qty button{width:28px;height:28px;border:1px solid #e8e5df!important;background:#fff!important;color:#171717!important}
+.drawer-foot{padding:23px 28px!important;background:#faf9f7}.drawer-foot button{background:#171717!important;color:#fff!important;min-height:50px;font-size:10px!important}
+@keyframes drawerIn{from{transform:translateX(35px);opacity:.7}to{transform:none;opacity:1}}
+.route-wrap{max-width:1180px!important;padding:76px 28px 100px!important}.route-title{font-size:clamp(46px,6vw,76px)!important;line-height:.98!important}
+.route-lead{max-width:680px!important;font-size:13px!important;line-height:2!important;color:#777!important}
+.route-btn{min-height:46px!important;padding:14px 20px!important;background:#171717!important;color:#fff!important;border:1px solid #171717!important;letter-spacing:.12em!important;font-size:9px!important;transition:all .25s!important}
+.route-btn:hover{background:#fff!important;color:#171717!important;transform:translateY(-2px)}.route-btn.secondary{background:#fff!important;color:#171717!important;border-color:#dedbd5!important}
+.route-actions{gap:12px!important;align-items:center}
+.checkout-form,.checkout-summary,.contact-form{background:#fff!important;border:1px solid #e9e6e0!important;padding:clamp(20px,4vw,38px)!important}
+.checkout-form input,.checkout-form select,.checkout-form textarea,.contact-form input,.contact-form textarea{width:100%;min-height:48px;border:1px solid #e5e2dc!important;background:#fff!important;padding:13px 14px!important;color:#171717!important;margin:7px 0 14px!important;outline:none}
+.checkout-form input:focus,.checkout-form textarea:focus{border-color:#171717!important}
+.tracking-code{font:36px "Cormorant Garamond";padding:24px;background:#f5f3ef;letter-spacing:.12em}
+.route-changing .route-enter{animation:routeIn .35s ease both}@keyframes routeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.vn-fly{position:fixed;z-index:9999;pointer-events:none;object-fit:cover;border-radius:6px;box-shadow:0 12px 35px #0003;transition:transform .72s cubic-bezier(.18,.72,.2,1),opacity .72s,width .72s,height .72s}
+.vn-pulse{animation:vnPulse .55s ease}@keyframes vnPulse{0%,100%{transform:scale(1)}45%{transform:scale(1.17);background:#e9e3d8!important}}
+.vn-heart-pop{animation:vnHeart .48s cubic-bezier(.2,.8,.2,1)}@keyframes vnHeart{0%{transform:scale(1)}45%{transform:scale(1.35) rotate(-8deg)}100%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.vn-fly,.vn-pulse,.vn-heart-pop{animation:none!important;transition:none!important}}
+
 </style>
 </head>
 <body>
 <div id="introLoader"><div class="loader-mark">VALLON NOIR</div><div class="loader-caption">MAISON DE PARFUMS</div><div class="loader-track"><span id="loaderFill"></span></div><div class="loader-percent" id="loaderPercent">00%</div></div><div id="scrollLoader"><span></span></div>
 
-<header class="header"><div class="wrap headin"><button class="mobile-toggle" aria-label="Open menu" onclick="openSidebar()">☰</button><a href="#" class="brand"><strong>VALLON NOIR</strong><small>MAISON DE PARFUMS</small></a><nav class="nav desktop-nav"><a href="#/collection">Collection</a><a href="#/story">The Maison</a><a href="#/about">About</a><a href="#/journal">Journal</a><a href="#/quiz">Find your scent</a><a href="#/contact">Contact</a></nav><div class="head-actions"><button class="saved-link" onclick="location.hash='#/wishlist'">المفضلة (<span id="wishCount">0</span>)</button><button class="bag" onclick="openCart()" data-i18n="bag">السلة (<span id="bagCount">0</span>)</button><button class="language-toggle" id="languageToggle" onclick="toggleLanguage()">EN / AR</button></div></div></header>
+<header class="header"><div class="wrap headin"><button class="mobile-toggle" aria-label="Open menu" onclick="openSidebar()">☰</button><a href="#" class="brand"><strong>VALLON NOIR</strong><small>MAISON DE PARFUMS</small></a><nav class="nav desktop-nav"><a href="#/collection">Collection</a><a href="#/story">The Maison</a><a href="#/about">About</a><a href="#/journal">Journal</a><a href="#/quiz">Find your scent</a><a href="#/contact">Contact</a></nav><div class="head-actions"><a class="compare-head" href="#/compare"><span class="action-symbol">⇄</span><span>COMPARE</span></a><button class="saved-link" onclick="openWishlist()" aria-label="Open wishlist"><span class="action-symbol">♡</span><span class="action-label">SAVED</span><b id="wishCount">0</b></button><button class="bag" onclick="openCart()" aria-label="Open shopping bag"><span class="action-symbol">▱</span><span class="action-label">BAG</span><b id="bagCount">0</b></button><button class="language-toggle" id="languageToggle" onclick="toggleLanguage()">EN / AR</button></div></div></header>
 <main id="homeView">
 <section class="hero"><div class="wrap"><div class="hero-copy"><div class="eyebrow">The art of being unforgettable</div><h1>Leave<br><i>an impression.</i></h1><p>Not simply worn. Remembered. Discover a modern fragrance wardrobe shaped by rare materials, quiet confidence and the poetry of contrast.</p><a class="cta" href="#collection">Discover the signature collection　→</a></div><div class="hero-meta">Grasse · Paris · Est. 2026</div></div></section>
 <div class="wrap"><section class="pillars"><div class="pillar"><span class="num">01</span><div><h3>Rare raw materials</h3><p>Sourced with discernment. Selected for character, not convention.</p></div></div><div class="pillar"><span class="num">02</span><div><h3>Slow composition</h3><p>Each formula is given the time and space it deserves.</p></div></div><div class="pillar"><span class="num">03</span><div><h3>Made to be remembered</h3><p>A personal signature that lingers beyond the moment.</p></div></div></section>
@@ -342,7 +396,40 @@ const families=['All','Woody & Smoke','Oud & Amber','Leather & Amber','Citrus Fo
 function readStore(key,fallback){try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}}
 let family='All',cart=readStore('vn-cart',[]),wish=readStore('vn-wishlist',[]),orders=readStore('vn-orders',[]),recentlyViewed=readStore('vn-recent',[]),language=readStore('vn-language','en'),selected=null,drawerMode='cart',visibleCount=6,filteredProducts=[],productObserver=null,loadObserver=null;
 function persistStore(){try{localStorage.setItem('vn-cart',JSON.stringify(cart));localStorage.setItem('vn-wishlist',JSON.stringify(wish));localStorage.setItem('vn-orders',JSON.stringify(orders));localStorage.setItem('vn-recent',JSON.stringify(recentlyViewed));localStorage.setItem('vn-language',language)}catch(e){}}
-function toggleLanguage(){language=language==='en'?'ar':'en';try{localStorage.setItem('vn-language',language)}catch(e){}applyLanguage();renderRoute();if(location.hash==='#/compare')renderComparison();if(location.hash==='#/gift')updateGiftPreview();render();updateCart()}
+function toggleLanguage(){language=language==='en'?'ar':'en';try{localStorage.setItem('vn-language',language)}catch(e){}
+/* CODΞX: lightweight cart and wishlist interactions without route refresh */
+function vnFlyTo(target,source){
+ if(!target||!source||!source.getBoundingClientRect)return;
+ const a=source.getBoundingClientRect(),b=target.getBoundingClientRect(),img=source.querySelector&&source.querySelector('img');
+ const fly=document.createElement(img?'img':'div');fly.className='vn-fly';if(img)fly.src=img.currentSrc||img.src;else fly.textContent='✦';
+ Object.assign(fly.style,{left:(a.left+a.width/2-24)+'px',top:(a.top+a.height/2-24)+'px',width:'48px',height:'48px'});
+ document.body.appendChild(fly);requestAnimationFrame(()=>{fly.style.transform='translate('+(b.left+b.width/2-a.left-a.width/2)+'px,'+(b.top+b.height/2-a.top-a.height/2)+'px) scale(.15)';fly.style.opacity='.12';fly.style.width='10px';fly.style.height='10px'});setTimeout(()=>fly.remove(),780);
+ target.classList.remove('vn-pulse');void target.offsetWidth;target.classList.add('vn-pulse');
+}
+function toggleWish(id){
+ const source=document.activeElement,adding=!wish.includes(id);wish=adding?[...wish,id]:wish.filter(x=>x!==id);persistStore();updateCart();
+ if(adding)vnFlyTo(document.querySelector('.head-actions .saved-link'),source);
+ if(source&&source.classList&&source.classList.contains('heart')){source.classList.toggle('on',adding);source.textContent=adding?'♥':'♡';source.classList.add('vn-heart-pop');setTimeout(()=>source.classList.remove('vn-heart-pop'),520)}
+ if(location.hash==='#/wishlist')renderRoute();toast(adding?'Added to your saved compositions':'Removed from saved compositions');
+}
+function add(id){
+ const source=document.activeElement,p=items.find(x=>x.id===id);if(!p)return;
+ const found=cart.find(x=>x.id===id);if(found)found.qty++;else cart.push({id,qty:1});persistStore();updateCart();
+ vnFlyTo(document.querySelector('.head-actions .bag'),source);toast(p.name+' added to your bag');
+}
+function openCart(){drawerMode='cart';updateCart();document.getElementById('cartDrawer').classList.add('show');document.body.style.overflow='hidden'}
+function openWishlist(){drawerMode='wishlist';updateCart();document.getElementById('cartDrawer').classList.add('show');document.body.style.overflow='hidden'}
+function closeCart(){document.getElementById('cartDrawer').classList.remove('show');document.body.style.overflow=''}
+function addSelected(){if(selected)add(selected.id);closeModal()}
+function updateQty(id,delta){const x=cart.find(x=>x.id===id);if(x)x.qty+=delta;cart=cart.filter(x=>x.qty>0);persistStore();updateCart()}
+function vnFallback(img){
+ if(img.dataset.vnFallback)return;img.dataset.vnFallback='1';
+ img.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 750%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x2=%221%22 y2=%221%22%3E%3Cstop stop-color=%22%23f1eee8%22/%3E%3Cstop offset=%221%22 stop-color=%22%23d8d0c3%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22600%22 height=%22750%22 fill=%22url(%23g)%22/%3E%3Crect x=%22205%22 y=%22220%22 width=%22190%22 height=%22320%22 rx=%2228%22 fill=%22%23171717%22/%3E%3Crect x=%22248%22 y=%22175%22 width=%22104%22 height=%2260%22 fill=%22%23b9a17c%22/%3E%3Crect x=%22220%22 y=%22335%22 width=%22160%22 height=%22100%22 fill=%22%23f5f2ec%22/%3E%3Ctext x=%22300%22 y=%22390%22 font-size=%2220%22 text-anchor=%22middle%22 fill=%22%23171717%22 font-family=%22Georgia%22 letter-spacing=%222%22%3EVALLON%3C/text%3E%3Ctext x=%22300%22 y=%22415%22 font-size=%2212%22 text-anchor=%22middle%22 fill=%22%23171717%22 font-family=%22Georgia%22 letter-spacing=%222%22%3ENOIR%3C/text%3E%3C/svg%3E';
+}
+document.querySelectorAll('img').forEach(img=>img.addEventListener('error',()=>vnFallback(img)));
+new MutationObserver(records=>records.forEach(rec=>rec.addedNodes.forEach(node=>{if(node.nodeType===1){if(node.tagName==='IMG')node.addEventListener('error',()=>vnFallback(node));node.querySelectorAll&&node.querySelectorAll('img').forEach(img=>img.addEventListener('error',()=>vnFallback(img)))}}))).observe(document.body,{childList:true,subtree:true});
+
+applyLanguage();renderRoute();if(location.hash==='#/compare')renderComparison();if(location.hash==='#/gift')updateGiftPreview();render();updateCart()}
 function applyLanguage(){document.documentElement.lang=language;document.documentElement.dir=language==='ar'?'rtl':'ltr';const b=document.getElementById('languageToggle');if(b)b.textContent=language==='ar'?'العربية ✓':'EN / AR';const ar=language==='ar';const nav=document.querySelectorAll('.desktop-nav a');['Collection','About','Journal','Contact'].forEach((v,i)=>{if(nav[i])nav[i].textContent=ar?['المجموعة','عن الدار','المجلة','تواصل'][i]:v});const side=document.querySelectorAll('.sidebar-link');['Home','Collection','Wishlist','About','Journal','Contact','Checkout'].forEach((v,i)=>{if(side[i])side[i].textContent=ar?['الرئيسية','المجموعة','المفضلة','عن الدار','المجلة','تواصل','إتمام الطلب'][i]:v});const hero=document.querySelector('.hero-copy .eyebrow');if(hero)hero.textContent=ar?'فنّ أن تترك أثراً':'The art of being unforgettable';const hp=document.querySelector('.hero-copy>p');if(hp)hp.textContent=ar?'ليس مجرد عطر ترتديه، بل أثر يبقى في الذاكرة. اكتشف مجموعة عطور عصرية صيغت من خامات نادرة وثقة هادئة وتباين متوازن.':'Not simply worn. Remembered. Discover a modern fragrance wardrobe shaped by rare materials, quiet confidence and the poetry of contrast.';const cta=document.querySelector('.hero-copy .cta');if(cta)cta.textContent=ar?'اكتشف مجموعة العطور ←':'Discover the signature collection　→';const search=document.getElementById('search');if(search)search.placeholder=ar?'ابحث عن عطرك':'Find your fragrance';const signup=document.querySelector('.signup h3');if(signup)signup.textContent=ar?'رسائل من الدار':'Letters from the maison'}
 function escapeHTML(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function makeOrderId(){return 'VN-'+new Date().toISOString().slice(0,10).replace(/-/g,'')+'-'+Math.random().toString(36).slice(2,7).toUpperCase()}
