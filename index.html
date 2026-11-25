@@ -425,7 +425,28 @@ button:active,.cta:active,.route-btn:active,.card-add:active{transform:scale(.97
 @media(prefers-reduced-motion:reduce){.vn-fly,.route-enter,.product,.photo img,button{animation:none!important;transition:none!important}}
 
 </style>
-</head>
+
+<style id="vn-complete-upgrade">
+:root{--vn-glow:rgba(196,161,106,.18)}
+body{overflow-x:hidden}
+::selection{background:#c4a16a;color:#111}
+button,.cta,.route-btn,.signature-card,.note-world-card{transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease,background .28s ease}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #c4a16a;outline-offset:4px}
+.vn-stage{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;padding:100px max(40px,calc((100vw - 1320px)/2));background:radial-gradient(ellipse at 72% 48%,#3b3020 0%,#171613 34%,#0b0b0a 78%);overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.vn-stage-copy{max-width:560px;position:relative;z-index:2}.vn-stage-copy h2{font:400 clamp(48px,6vw,76px)/.95 "Cormorant Garamond";margin:20px 0}.vn-stage-copy h2 i{color:#c4a16a}.vn-stage-copy p{color:#a49b8e;line-height:2;font-size:12px;max-width:410px}.vn-stage-visual{min-height:440px;display:grid;place-items:center;perspective:1000px;position:relative}.vn-stage-visual:before{content:"";position:absolute;width:min(32vw,360px);aspect-ratio:1;border-radius:50%;background:#c4a16a18;filter:blur(38px)}.vn-bottle{position:relative;width:min(54%,270px);aspect-ratio:3/4;transform-style:preserve-3d;transition:transform .18s ease;filter:drop-shadow(22px 30px 28px #000b)}.vn-bottle img{width:100%;height:100%;object-fit:cover;border-radius:5px;box-shadow:inset 0 0 0 1px #fff4;transform:translateZ(18px)}.vn-bottle:before{content:"VALLON NOIR";position:absolute;z-index:2;left:10%;right:10%;top:49%;padding:12px 4px;text-align:center;background:#111e;color:#d9c39e;border:1px solid #c4a16a88;font:500 12px "Cormorant Garamond";letter-spacing:.18em;transform:translateZ(35px)}.vn-bottle:after{content:"";position:absolute;top:-12%;left:35%;width:30%;height:14%;background:linear-gradient(90deg,#6c5738,#d8c39e,#6c5738);border-radius:4px 4px 0 0;transform:translateZ(12px)}
+.vn-stage-controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.vn-stage-controls button{background:transparent;color:#d8c39e;border:1px solid #c4a16a66;padding:12px 16px;font-size:9px;letter-spacing:.14em;text-transform:uppercase}.vn-stage-controls button:hover{background:#c4a16a;color:#111}
+.vn-recent{padding:85px 0}.vn-recent-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:30px;gap:20px}.vn-recent-head h2{font:400 clamp(38px,5vw,58px) "Cormorant Garamond";margin:10px 0}.vn-recent-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.vn-mini{border:1px solid var(--line);background:#141310;padding:12px;min-width:0}.vn-mini img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}.vn-mini h3{font:400 23px "Cormorant Garamond";margin:14px 0 5px}.vn-mini p{font-size:9px;color:#a49b8e;line-height:1.7}.vn-mini button{width:100%;padding:12px;background:transparent;border:1px solid #c4a16a88;color:#d5bd94;font-size:9px;letter-spacing:.12em;text-transform:uppercase}
+.vn-quick{position:absolute;z-index:4;left:12px;bottom:12px;border:1px solid #c4a16a88;background:#0c0c0de8;color:#eee9df;padding:11px 14px;font-size:8px;letter-spacing:.16em;text-transform:uppercase;opacity:0;transform:translateY(8px);transition:.25s}.photo:hover .vn-quick,.photo:focus-within .vn-quick{opacity:1;transform:translateY(0)}
+.vn-reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}.vn-reveal.vn-in{opacity:1;transform:none}
+.vn-cursor{position:fixed;z-index:1;pointer-events:none;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,var(--vn-glow),transparent 68%);transform:translate(-50%,-50%);opacity:0;transition:opacity .25s}
+.vn-toast-icon{display:inline-block;margin-right:9px;animation:vn-pop .45s ease}@keyframes vn-pop{50%{transform:scale(1.5) rotate(-12deg)}}
+.vn-cart-celebrate{animation:vn-celebrate .55s ease}@keyframes vn-celebrate{30%{transform:scale(1.12) rotate(-4deg)}60%{transform:scale(.94) rotate(3deg)}}
+.vn-scroll-meter{position:fixed;top:0;left:0;height:2px;width:0;background:#c4a16a;z-index:1000;box-shadow:0 0 12px #c4a16a}
+.vn-smart-note{border:1px solid var(--line);padding:22px;margin:25px 0;background:linear-gradient(120deg,#c4a16a10,transparent);color:#bdb3a5;font-size:11px;line-height:1.9}
+.vn-empty-action{display:inline-block;margin-top:12px;color:#c4a16a;text-decoration:underline}
+@media(max-width:800px){.vn-stage{grid-template-columns:1fr;padding:75px 22px;gap:20px}.vn-stage-visual{min-height:340px}.vn-recent-grid{grid-template-columns:repeat(2,1fr)}.vn-recent-head{display:block}.vn-quick{opacity:1;transform:none;bottom:9px;left:9px;padding:9px}.vn-cursor{display:none}}
+@media(prefers-reduced-motion:reduce){.vn-reveal{opacity:1;transform:none;transition:none}.vn-bottle{transition:none}}
+</style></head>
 <body>
 <div id="introLoader"><div class="loader-mark">VALLON NOIR</div><div class="loader-caption">MAISON DE PARFUMS</div><div class="loader-track"><span id="loaderFill"></span></div><div class="loader-percent" id="loaderPercent">00%</div></div><div id="scrollLoader"><span></span></div>
 
@@ -519,7 +540,7 @@ function render(){renderFilters();visibleCount=6;let list=items.filter(p=>(famil
 function drawProducts(){if(productObserver)productObserver.disconnect();if(loadObserver)loadObserver.disconnect();const shown=filteredProducts.slice(0,visibleCount);document.getElementById('products').innerHTML=shown.map(p=>'<article class="product"><div class="photo product-photo" role="link" tabindex="0" onclick="showProduct(\''+p.id+'\')" onkeydown="if(event.key===\'Enter\')showProduct(\''+p.id+'\')"><img loading="lazy" decoding="async" src="'+p.img+'" alt="'+p.name+'"><span class="tag">'+p.tag+'</span><button class="heart '+(wish.includes(p.id)?'on':'')+'" aria-label="Add to wishlist" onclick="event.stopPropagation();toggleWish(\''+p.id+'\')">'+(wish.includes(p.id)?'♥':'♡')+'</button><span class="photo-hint">View details ↗</span></div><div class="product-title"><div><h3><a href="#/product/'+p.id+'">'+p.name+'</a></h3><p>'+p.subtitle+'</p></div><span class="price">'+money(p.price)+'</span></div><div class="product-foot"><span>'+p.family+'</span><span>Vallon Noir</span></div><button class="card-add" onclick="add(\''+p.id+'\')">أضف إلى السلة <span>＋</span></button></article>').join('')||'<p>لم يتم العثور على عطور — No fragrances found.</p>';if(visibleCount<filteredProducts.length){document.getElementById('products').insertAdjacentHTML('beforeend','<div class="loading-more" id="loadingMore">Discovering more compositions</div>');loadObserver=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){loadObserver.disconnect();setTimeout(()=>{visibleCount=Math.min(visibleCount+6,filteredProducts.length);drawProducts()},450)}},{rootMargin:'220px'});loadObserver.observe(document.getElementById('loadingMore'));}productObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');productObserver.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.product:not(.visible)').forEach(el=>productObserver.observe(el));}
 function toggleWish(id){wish=wish.includes(id)?wish.filter(x=>x!==id):[...wish,id];persistStore();if(location.hash.startsWith('#/'))renderRoute();else render();updateCart();toast(wish.includes(id)?'اتضافت للمفضلة · Saved':'اتشالت من المفضلة · Removed')}
 function add(id){let found=cart.find(x=>x.id===id);if(found)found.qty++;else cart.push({id,qty:1});persistStore();updateCart();toast(items.find(x=>x.id===id).name+' added to your bag')}
-function showProduct(id){recentlyViewed=[id,...recentlyViewed.filter(x=>x!==id)].slice(0,4);try{localStorage.setItem('vn-recent',JSON.stringify(recentlyViewed))}catch(e){}location.hash='#/product/'+id;return;selected=items.find(x=>x.id===id);document.getElementById('modalImg').src=selected.img;document.getElementById('modalImg').alt=selected.name;document.getElementById('modalFamily').textContent=selected.family;document.getElementById('modalName').textContent=selected.name;document.getElementById('modalSubtitle').textContent=selected.subtitle;document.getElementById('modalDesc').textContent=selected.desc;document.getElementById('modalPrice').textContent=money(selected.price);document.getElementById('modalNotes').innerHTML=selected.notes.map(n=>'<span>'+n+'</span>').join('');document.getElementById('productModal').classList.add('show')}
+function showProduct(id){recentlyViewed=[id,...recentlyViewed.filter(x=>x!==id)].slice(0,4);try{localStorage.setItem('vn-recent',JSON.stringify(recentlyViewed))}catch(e){}selected=items.find(x=>x.id===id);if(!selected)return;document.getElementById('modalImg').src=selected.img;document.getElementById('modalImg').alt=selected.name;document.getElementById('modalFamily').textContent=selected.family;document.getElementById('modalName').textContent=selected.name;document.getElementById('modalSubtitle').textContent=selected.subtitle;document.getElementById('modalDesc').textContent=selected.desc;document.getElementById('modalPrice').textContent=money(selected.price);document.getElementById('modalNotes').innerHTML=selected.notes.map(n=>'<span>'+n+'</span>').join('');document.getElementById('productModal').classList.add('show');document.body.style.overflow='hidden';}
 function closeModal(){document.getElementById('productModal').classList.remove('show')}
 function addSelected(){if(selected)add(selected.id);closeModal();openCart()}
 function openCart(){location.hash='#/cart';}
@@ -630,5 +651,93 @@ window.addEventListener('hashchange',()=>{document.body.classList.add('route-cha
 window.addEventListener('popstate',()=>{renderRoute();if(location.hash==='#/gift')updateGiftPreview()});
 
 applyLanguage();renderRoute();
+
+/* VALLON NOIR — COMPLETE PREMIUM EXPERIENCE */
+(function(){
+ const $=(q,root=document)=>root.querySelector(q);
+ const $$=(q,root=document)=>Array.from(root.querySelectorAll(q));
+ const escape=(v)=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ function addShowcase(){
+  const home=$('#homeView');if(!home||$('#vnShowcase'))return;
+  const stage=document.createElement('section');stage.id='vnShowcase';stage.className='vn-stage vn-reveal';
+  stage.innerHTML='<div class="vn-stage-copy"><div class="eyebrow">THE OBJECT · 3D STUDY</div><h2>A signature<br><i>in three dimensions.</i></h2><p>Explore the visual character of the maison. Move across the bottle to tilt the composition, or switch the featured fragrance.</p><div class="vn-stage-controls"><button type="button" id="vnPrev">Previous composition</button><button type="button" id="vnNext">Next composition</button><a class="cta" href="#/quiz">Find your signature →</a></div><div class="route-kicker" id="vnStageName" style="margin-top:22px">NOCTURNE EXTRAIT</div></div><div class="vn-stage-visual" id="vnStageArea"><div class="vn-bottle" id="vnBottle"><img id="vnBottleImage" src="'+(items[0]?.img||'')+'" alt="Featured Vallon Noir fragrance"></div></div>';
+  const pillar=$('.pillars',home);if(pillar)pillar.insertAdjacentElement('afterend',stage);else home.prepend(stage);
+ }
+ function addRecent(){
+  const home=$('#homeView');if(!home||$('#vnRecent'))return;
+  const section=document.createElement('section');section.id='vnRecent';section.className='wrap vn-recent vn-reveal';
+  const list=(recentlyViewed||[]).map(id=>items.find(p=>p.id===id)).filter(Boolean);
+  section.innerHTML='<div class="vn-recent-head"><div><div class="eyebrow">YOUR PERSONAL EDIT</div><h2>Recently <i>explored.</i></h2></div><a class="route-kicker" href="#/collection">Explore all compositions ↗</a></div><div class="vn-recent-grid">'+(list.length?list.map(p=>'<article class="vn-mini"><img loading="lazy" src="'+p.img+'" alt="'+escape(p.name)+'"><h3>'+escape(p.name)+'</h3><p>'+escape(p.subtitle)+'</p><button type="button" data-vn-view="'+p.id+'">Quick view ↗</button></article>').join(''):'<div class="vn-smart-note">Your fragrance journey starts here. Open a composition to see it appear in your personal edit.</div>')+'</div>';
+  const hub=$('.signature-hub',home);if(hub)hub.insertAdjacentElement('beforebegin',section);else home.append(section);
+ }
+ function quickButtons(root=document){
+  $$('.product .photo',root).forEach(photo=>{
+   if($('.vn-quick',photo))return;
+   const link=photo.closest('.product')?.querySelector('.product-title a[href*="/product/"]');
+   const match=link?.getAttribute('href')?.match(/\/product\/([^/?#]+)/);
+   const onclick=photo.getAttribute('onclick')||'';
+   const id=match?.[1]||(onclick.match(/showProduct\('([^']+)'\)/)||[])[1];
+   if(!id)return;
+   const b=document.createElement('button');b.type='button';b.className='vn-quick';b.textContent='Quick view ↗';b.addEventListener('click',e=>{e.stopPropagation();showProduct(id)});photo.append(b);
+  });
+ }
+ function setupReveal(){
+  const targets=$$('.section,.atelier,.journal,.signature-hub,.note-world,.product,.signature-card,.note-world-card,.vn-stage,.vn-recent');
+  targets.forEach(el=>{if(!el.classList.contains('vn-in'))el.classList.add('vn-reveal')});
+  if(!('IntersectionObserver'in window)){targets.forEach(x=>x.classList.add('vn-in'));return}
+  const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('vn-in');io.unobserve(entry.target)}}),{threshold:.08,rootMargin:'0px 0px -35px 0px'});
+  targets.forEach(x=>io.observe(x));
+ }
+ let stageIndex=0;
+ function setStage(n){
+  if(!items.length)return;stageIndex=(n+items.length)%items.length;const p=items[stageIndex],img=$('#vnBottleImage'),name=$('#vnStageName');
+  if(img){img.style.opacity='.2';setTimeout(()=>{img.src=p.img;img.alt=p.name;img.style.opacity='1'},140)}
+  if(name)name.textContent=p.name.toUpperCase();
+ }
+ function setup3d(){
+  const area=$('#vnStageArea'),bottle=$('#vnBottle');if(!area||!bottle)return;
+  area.addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;const r=area.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;bottle.style.transform='rotateY('+(x*24)+'deg) rotateX('+(-y*18)+'deg) translateY(-7px)'});
+  area.addEventListener('pointerleave',()=>bottle.style.transform='rotateY(-8deg) rotateX(3deg)');
+  $('#vnPrev')?.addEventListener('click',()=>setStage(stageIndex-1));$('#vnNext')?.addEventListener('click',()=>setStage(stageIndex+1));
+ }
+ function setupCursor(){
+  if(matchMedia('(pointer:coarse)').matches||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const halo=document.createElement('div');halo.className='vn-cursor';document.body.append(halo);
+  window.addEventListener('pointermove',e=>{halo.style.left=e.clientX+'px';halo.style.top=e.clientY+'px';halo.style.opacity='1'},{passive:true});
+  document.addEventListener('pointerleave',()=>halo.style.opacity='0');
+ }
+ function setupScrollMeter(){
+  const meter=document.createElement('div');meter.className='vn-scroll-meter';document.body.append(meter);
+  let ticking=false;window.addEventListener('scroll',()=>{if(ticking)return;ticking=true;requestAnimationFrame(()=>{const max=document.documentElement.scrollHeight-innerHeight;meter.style.width=(max>0?scrollY/max*100:0)+'%';ticking=false})},{passive:true});
+ }
+ function setupDelegation(){
+  document.addEventListener('click',e=>{
+   const view=e.target.closest('[data-vn-view]');if(view){showProduct(view.dataset.vnView);return}
+   const addBtn=e.target.closest('.card-add,.route-btn');if(addBtn&&/add|bag|أضف/i.test(addBtn.textContent)){addBtn.classList.add('vn-cart-celebrate');setTimeout(()=>addBtn.classList.remove('vn-cart-celebrate'),600)}
+  });
+  const observer=new MutationObserver(records=>{let changed=false;records.forEach(r=>{if(r.addedNodes.length)changed=true});if(changed){quickButtons();setupReveal();if($('#vnRecent'))refreshRecent()}});observer.observe($('#homeView')||document.body,{childList:true,subtree:true});
+ }
+ function refreshRecent(){
+  const section=$('#vnRecent');if(!section)return;
+  const list=(recentlyViewed||[]).map(id=>items.find(p=>p.id===id)).filter(Boolean);
+  const grid=$('.vn-recent-grid',section);if(!grid)return;
+  grid.innerHTML=list.length?list.map(p=>'<article class="vn-mini"><img loading="lazy" src="'+p.img+'" alt="'+escape(p.name)+'"><h3>'+escape(p.name)+'</h3><p>'+escape(p.subtitle)+'</p><button type="button" data-vn-view="'+p.id+'">Quick view ↗</button></article>').join(''):'<div class="vn-smart-note">Your fragrance journey starts here. Open a composition to see it appear in your personal edit.</div>';
+ }
+ function enhanceWishlist(){
+  const view=$('#routeView');if(!view||!location.hash.startsWith('#/wishlist')||$('.vn-smart-note',view))return;
+  const saved=items.filter(p=>wish.includes(p.id));
+  if(!saved.length)return;
+  const box=document.createElement('div');box.className='vn-smart-note';const top=saved[0];
+  box.innerHTML='<b>YOUR PERSONAL EDIT</b><br>Based on the notes you saved, start with <b>'+escape(top.name)+'</b> — '+escape(top.family)+'. Your saved compositions stay on this device.';
+  $('.wishlist-toolbar',view)?.insertAdjacentElement('afterend',box);
+ }
+ function boot(){
+  addShowcase();addRecent();quickButtons();setupReveal();setup3d();setupCursor();setupScrollMeter();setupDelegation();enhanceWishlist();
+  document.addEventListener('click',()=>setTimeout(()=>{quickButtons();setupReveal();enhanceWishlist()},80));
+  window.addEventListener('hashchange',()=>setTimeout(()=>{addRecent();refreshRecent();quickButtons();setupReveal();enhanceWishlist()},80));
+  window.addEventListener('storage',()=>{refreshRecent()});
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
+})();
 </script>
 </body></html>
