@@ -424,6 +424,43 @@ button:active,.cta:active,.route-btn:active,.card-add:active{transform:scale(.97
 @media(max-width:700px){.vn-header-inner{height:64px}.vn-center-brand strong{font-size:14px!important;letter-spacing:.2em!important}.vn-icon-actions{gap:8px}.vn-icon-button{width:37px!important;height:37px!important;min-width:37px!important}.vn-icon-button .action-symbol{font-size:21px!important}}
 @media(prefers-reduced-motion:reduce){.vn-fly,.route-enter,.product,.photo img,button{animation:none!important;transition:none!important}}
 
+
+/* VALLON NOIR — consolidated noir UI repair */
+:root{color-scheme:dark;--paper:#10100f;--ink:#eee9df;--gold:#c4a16a;--muted:#a49b8e;--line:rgba(238,233,223,.14)}
+html,body{background:#10100f!important;color:#eee9df!important}
+.header.vn-minimal-header{background:rgba(10,10,9,.96)!important;border-color:#c4a16a35!important}
+.vn-header-inner{grid-template-columns:44px 1fr 1fr!important;gap:12px}
+.vn-menu-trigger{grid-column:1;display:flex!important;width:40px;height:40px;flex-direction:column;justify-content:center;align-items:center;gap:5px;border:1px solid #c4a16a66!important;border-radius:50%;background:#151411!important;color:#eee9df!important;cursor:pointer;z-index:2}
+.vn-menu-trigger span{display:block;width:15px;height:1px;background:#c4a16a;transition:transform .25s,opacity .25s}
+.vn-menu-trigger:hover{background:#c4a16a!important}.vn-menu-trigger:hover span{background:#111}
+.vn-center-brand{grid-column:2!important;justify-self:center!important}.vn-icon-actions{grid-column:3!important}
+#mobileSidebar{z-index:2100!important;background:rgba(0,0,0,.68)!important;backdrop-filter:blur(8px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .28s,visibility .28s}
+#mobileSidebar.open{display:block!important;opacity:1;visibility:visible;pointer-events:auto}
+.sidebar-panel{height:100%;height:100dvh;width:min(390px,88vw);overflow-y:auto;overscroll-behavior:contain;background:#10100f!important;color:#eee9df!important;padding:26px 28px max(28px,env(safe-area-inset-bottom));box-shadow:18px 0 65px #0009;border-right:1px solid #c4a16a55;transform:translateX(-22px);transition:transform .32s cubic-bezier(.2,.7,.2,1)}
+#mobileSidebar.open .sidebar-panel{transform:translateX(0)}
+.sidebar-top{position:sticky;top:-26px;background:#10100f;z-index:1;padding:10px 0 22px!important;border-color:#c4a16a44!important}
+.sidebar-top strong{color:#eee9df!important}.sidebar-close{color:#c4a16a!important;border:1px solid #c4a16a55!important;width:36px;height:36px;border-radius:50%}
+.sidebar-link{color:#d9d0c2!important;border-color:#ffffff18!important;padding:15px 2px!important;transition:color .2s,padding .2s,border-color .2s!important}
+.sidebar-link:hover{color:#c4a16a!important;padding-left:9px!important;border-color:#c4a16a66!important}
+.hero-copy,.hero h1,.hero p{color:#eee9df!important}.hero h1 i,.hero .eyebrow{color:#c4a16a!important}
+.hero:before{background:linear-gradient(90deg,#080807f2 0%,#080807ce 44%,#08080735 100%)!important}
+.section,#collection,.journal{background:#10100f!important;color:#eee9df!important}
+.pillar h3,.section-head h2,.journal h2,.product-title h3,.product-title a,.product-title p,.product-foot,.price{color:#eee9df!important}
+.pillar p,.section-head p,.journal p,.product-foot{color:#aaa195!important}
+.photo{background:#191815!important;border:1px solid #ffffff16!important}.photo img{filter:saturate(.92) brightness(.94)!important}
+.product{color:#eee9df!important;background:#151411!important;border:1px solid #ffffff12!important;box-shadow:0 12px 32px #0003!important}
+.product-title{padding:16px 14px 0!important}.product-foot{margin:12px 14px 0!important;border-color:#ffffff20!important}.card-add{margin:12px 14px 14px!important;width:calc(100% - 28px)!important;background:#c4a16a!important;color:#111!important;border:0!important;padding:13px!important}
+.route-wrap{color:#eee9df!important}.route-title,.route-kicker{color:#eee9df!important}.route-lead,.signature-muted{color:#aaa195!important}
+.route-wrap input,.route-wrap select,.route-wrap textarea,.checkout-form input,.checkout-form select,.checkout-form textarea,.contact-form input,.contact-form textarea,.tracking-form input{background:#171613!important;color:#eee9df!important;border:1px solid #ffffff2a!important}
+.route-wrap input::placeholder,.route-wrap textarea::placeholder{color:#928a7e!important}
+.bag-summary,.checkout-form,.checkout-summary,.tracking-card,.contact-form,.signature-panel{background:#171613!important;color:#eee9df!important;border:1px solid #ffffff20!important}
+.bag-page-row,.order-history-card,.editorial-card{background:#171613!important;color:#eee9df!important;border-color:#ffffff20!important}
+.bag-page-info h3,.bag-page-info h3 a,.bag-page-info p,.bag-page-info strong,.order-history-card h3{color:#eee9df!important}
+.route-btn{background:#c4a16a!important;color:#111!important;border:1px solid #c4a16a!important}.route-btn.secondary{background:transparent!important;color:#eee9df!important;border-color:#c4a16a!important}
+.modal,.drawer-panel{background:#11110f!important;color:#eee9df!important}.drawer-head,.drawer-foot,.cart-row{border-color:#ffffff20!important}
+.footer{background:#070707!important;color:#eee9df!important}
+@media(max-width:700px){.vn-header-inner{grid-template-columns:40px 1fr auto!important}.vn-center-brand{grid-column:2!important}.vn-icon-actions{grid-column:3!important}.vn-menu-trigger{width:36px;height:36px}.sidebar-panel{width:min(360px,90vw)}.route-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(prefers-reduced-motion:reduce){#mobileSidebar,.sidebar-panel,.vn-menu-trigger span,.product,.photo img,.route-enter{transition:none!important;animation:none!important}}
 </style>
 
 <style id="vn-performance-fix">
@@ -704,5 +741,16 @@ document.addEventListener('pointermove',function(e){
 document.addEventListener('pointerout',function(e){const card=e.target.closest('.product .photo');if(card&&!card.contains(e.relatedTarget))card.style.transform='';});
 
 
+
+// Consolidated interaction handlers: keep routes, drawers and motion in sync.
+function openSidebar(){const el=document.getElementById('mobileSidebar');if(!el)return;el.classList.add('open');document.body.style.overflow='hidden';const b=document.querySelector('.vn-menu-trigger');if(b)b.setAttribute('aria-expanded','true')}
+function closeSidebar(){const el=document.getElementById('mobileSidebar');if(el)el.classList.remove('open');document.body.style.overflow='';const b=document.querySelector('.vn-menu-trigger');if(b)b.setAttribute('aria-expanded','false')}
+function openCart(){closeSidebar();if(location.hash==='#/cart'){renderRoute();return}vnNavigate('#/cart')}
+function openWishlist(){closeSidebar();if(location.hash==='#/wishlist'){renderRoute();return}vnNavigate('#/wishlist')}
+function closeCart(){const d=document.getElementById('cartDrawer');if(d)d.classList.remove('show');document.body.style.overflow=''}
+function toggleWish(id){const wasSaved=wish.includes(id);const source=document.activeElement&&document.activeElement.closest?document.activeElement.closest('.product,.photo,.detail-layout,.bag-page-row'):null;wish=wasSaved?wish.filter(x=>x!==id):[...wish,id];persistStore();if(!wasSaved)vnFlyTo(document.querySelector('.vn-icon-actions .saved-link'),source);if(source){const heart=source.querySelector('.heart');if(heart){heart.classList.toggle('on',!wasSaved);heart.textContent=wasSaved?'♡':'♥';heart.classList.remove('vn-heart-pop');void heart.offsetWidth;heart.classList.add('vn-heart-pop')}}updateCart();if(location.hash==='#/wishlist')renderRoute();toast(wasSaved?'Removed from wishlist':'Added to wishlist')}
+function add(id){const p=items.find(x=>x.id===id);if(!p)return;const source=document.activeElement&&document.activeElement.closest?document.activeElement.closest('.product,.detail-layout,.bag-page-row'):null;const found=cart.find(x=>x.id===id);if(found)found.qty++;else cart.push({id,qty:1});persistStore();vnFlyTo(document.querySelector('.vn-icon-actions .bag'),source);updateCart();if(location.hash==='#/cart')renderRoute();toast(p.name+' added to your bag')}
+function updateQty(id,delta){const x=cart.find(x=>x.id===id);if(!x)return;x.qty+=delta;cart=cart.filter(x=>x.qty>0);persistStore();updateCart();if(location.hash==='#/cart')renderRoute()}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeSidebar();closeCart();closeModal()}});
 </script>
 </body></html>
