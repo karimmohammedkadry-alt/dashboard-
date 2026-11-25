@@ -1,16 +1,18 @@
-# VALLON NOIR — Frontend Portfolio
+# VALLON NOIR — Cinematic Noir Frontend
 
-A responsive luxury fragrance storefront concept, built as a static frontend.
+A portfolio-ready, frontend-only fragrance house experience with a cinematic black-and-brass art direction.
 
-## Included
-- Editorial landing page and responsive navigation
-- Fragrance catalogue with category filters, search and sorting
-- Product detail modal, wishlist and shopping bag interactions
-- Newsletter form interaction
-- Demo checkout notice only
+## Experience
+- Editorial hero with cinematic motion and responsive navigation
+- Fragrance catalogue with search, category filters, and price sorting
+- Product detail modal with olfactive notes
+- Wishlist and shopping bag interactions
+- Cart quantity controls and delivery threshold messaging
+- Newsletter interaction and editorial brand sections
+- Responsive layouts, keyboard dismissal, and reduced-motion support
 
 ## Frontend-only scope
-No backend, database, authentication, inventory API or payment processing is connected. Product data and interactions are client-side demo content.
+All product data and interactions are client-side demonstration features. No backend, database, authentication, inventory service, email provider, or payment gateway is connected. Checkout intentionally displays a demo notice and does not process payments.
 
-## Deploy
-Hosted on Vercel from the `main` branch of this repository.
+## Stack
+Semantic HTML, CSS, and vanilla JavaScript. Hosted on Vercel from the `main` branch.
