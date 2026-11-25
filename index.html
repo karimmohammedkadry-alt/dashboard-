@@ -396,12 +396,40 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:1px solid var(-
 @media(max-width:700px){.route-wrap{padding:48px 18px 70px!important}.bag-page-layout{grid-template-columns:1fr!important}.bag-summary{position:static!important}.route-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:22px 12px!important}}
 @media(max-width:430px){.head-actions .saved-link,.head-actions .bag,.compare-head{min-width:36px;padding:0 6px!important}.action-symbol{font-size:19px}.brand strong{font-size:19px!important}.route-grid{gap:16px 9px!important}.route-grid .product-title h3{font-size:19px!important}}
 
+
+/* Vallon Noir refined minimal header + motion system */
+.vn-minimal-header{position:sticky;top:0;z-index:1000;background:rgba(15,15,14,.96)!important;backdrop-filter:blur(16px);border-bottom:1px solid rgba(190,164,125,.22)!important}
+.vn-header-inner{height:76px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.vn-header-spacer{min-width:1px}
+.vn-center-brand{grid-column:2;justify-self:center;text-decoration:none!important}
+.vn-center-brand strong{font-size:17px!important;letter-spacing:.27em!important;font-weight:500!important;color:#f4f0e9!important;white-space:nowrap}
+.vn-icon-actions{grid-column:3;justify-self:end;display:flex;align-items:center;gap:12px}
+.vn-icon-button{position:relative!important;width:42px!important;height:42px!important;min-width:42px!important;padding:0!important;display:grid!important;place-items:center!important;border:1px solid rgba(190,164,125,.35)!important;border-radius:50%!important;background:transparent!important;color:#eee!important;transition:background .3s,border-color .3s,transform .3s!important}
+.vn-icon-button:hover{background:#b49a75!important;border-color:#b49a75!important;color:#111!important;transform:translateY(-2px)}
+.vn-icon-button .action-symbol{font-size:23px!important;line-height:1}
+.vn-icon-button b{position:absolute;right:-4px;top:-5px;min-width:17px;height:17px;padding:0 4px;border-radius:20px;background:#b49a75;color:#111;font:10px/17px Arial;text-align:center}
+.vn-fly{position:fixed;z-index:3000;pointer-events:none;object-fit:cover;border-radius:50%;box-shadow:0 8px 28px #0005;border:1px solid #c5a77c;transition:transform .72s cubic-bezier(.2,.75,.25,1),opacity .72s,width .72s,height .72s}
+.vn-pulse{animation:vnTargetPulse .55s ease-out}
+.vn-heart-pop{animation:vnHeartPop .48s cubic-bezier(.2,1.7,.4,1)}
+@keyframes vnTargetPulse{0%{box-shadow:0 0 0 0 #c5a77c99;transform:scale(1)}55%{box-shadow:0 0 0 12px #c5a77c00;transform:scale(1.1)}100%{transform:scale(1)}}
+@keyframes vnHeartPop{0%{transform:scale(1)}45%{transform:scale(1.45);color:#c5a77c}100%{transform:scale(1)}}
+.route-enter{animation:vnRouteIn .48s cubic-bezier(.2,.7,.2,1) both}
+@keyframes vnRouteIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.product{transition:transform .4s ease,box-shadow .4s ease}
+.product:hover{transform:translateY(-5px);box-shadow:0 18px 42px #00000012}
+.photo img{transition:transform .75s cubic-bezier(.2,.7,.2,1)}
+.product:hover .photo img{transform:scale(1.045)}
+button,.cta,.route-btn,.card-add{transition:transform .25s ease,background .3s ease,box-shadow .3s ease}
+button:active,.cta:active,.route-btn:active,.card-add:active{transform:scale(.97)}
+@media(max-width:700px){.vn-header-inner{height:64px}.vn-center-brand strong{font-size:14px!important;letter-spacing:.2em!important}.vn-icon-actions{gap:8px}.vn-icon-button{width:37px!important;height:37px!important;min-width:37px!important}.vn-icon-button .action-symbol{font-size:21px!important}}
+@media(prefers-reduced-motion:reduce){.vn-fly,.route-enter,.product,.photo img,button{animation:none!important;transition:none!important}}
+
 </style>
 </head>
 <body>
 <div id="introLoader"><div class="loader-mark">VALLON NOIR</div><div class="loader-caption">MAISON DE PARFUMS</div><div class="loader-track"><span id="loaderFill"></span></div><div class="loader-percent" id="loaderPercent">00%</div></div><div id="scrollLoader"><span></span></div>
 
-<header class="header"><div class="wrap headin"><button class="mobile-toggle" aria-label="Open menu" onclick="openSidebar()">☰</button><a href="#" class="brand"><strong>VALLON NOIR</strong><small>MAISON DE PARFUMS</small></a><nav class="nav desktop-nav"><a href="#/collection">Collection</a><a href="#/story">The Maison</a><a href="#/about">About</a><a href="#/journal">Journal</a><a href="#/quiz">Find your scent</a><a href="#/contact">Contact</a></nav><div class="head-actions"><a class="compare-head" href="#/compare"><span class="action-symbol">⇄</span><span>COMPARE</span></a><button class="saved-link" onclick="openWishlist()" aria-label="Open wishlist"><span class="action-symbol">♡</span><span class="action-label">SAVED</span><b id="wishCount">0</b></button><button class="bag" onclick="openCart()" aria-label="Open shopping bag"><span class="action-symbol">▱</span><span class="action-label">BAG</span><b id="bagCount">0</b></button><button class="language-toggle" id="languageToggle" onclick="toggleLanguage()">EN / AR</button></div></div></header>
+<header class="header vn-minimal-header"><div class="wrap vn-header-inner"><div class="vn-header-spacer"></div><a href="#" class="brand vn-center-brand" aria-label="Vallon Noir home"><strong>VALLON NOIR</strong></a><div class="head-actions vn-icon-actions"><button class="saved-link vn-icon-button" onclick="openWishlist()" aria-label="Open wishlist" title="Wishlist"><span class="action-symbol">♡</span><b id="wishCount">0</b></button><button class="bag vn-icon-button" onclick="openCart()" aria-label="Open shopping bag" title="Shopping bag"><span class="action-symbol">⌑</span><b id="bagCount">0</b></button></div></div></header>
 <main id="homeView">
 <section class="hero"><div class="wrap"><div class="hero-copy"><div class="eyebrow">The art of being unforgettable</div><h1>Leave<br><i>an impression.</i></h1><p>Not simply worn. Remembered. Discover a modern fragrance wardrobe shaped by rare materials, quiet confidence and the poetry of contrast.</p><a class="cta" href="#collection">Discover the signature collection　→</a></div><div class="hero-meta">Grasse · Paris · Est. 2026</div></div></section>
 <div class="wrap"><section class="pillars"><div class="pillar"><span class="num">01</span><div><h3>Rare raw materials</h3><p>Sourced with discernment. Selected for character, not convention.</p></div></div><div class="pillar"><span class="num">02</span><div><h3>Slow composition</h3><p>Each formula is given the time and space it deserves.</p></div></div><div class="pillar"><span class="num">03</span><div><h3>Made to be remembered</h3><p>A personal signature that lingers beyond the moment.</p></div></div></section>
@@ -461,7 +489,7 @@ function vnFlyTo(target,source){
  setTimeout(()=>fly.remove(),760);target.classList.remove('vn-pulse');void target.offsetWidth;target.classList.add('vn-pulse');
 }
 function toggleWish(id){
- const source=document.activeElement,adding=!wish.includes(id);
+ const active=document.activeElement,source=active&&active.closest?active.closest('.photo, .product, .detail-layout, .cart-row')||active:active,adding=!wish.includes(id);
  wish=adding?[...wish,id]:wish.filter(x=>x!==id);persistStore();
  if(adding)vnFlyTo(document.querySelector('.head-actions .saved-link'),source);
  if(source&&source.classList&&source.classList.contains('heart')){source.classList.toggle('on',adding);source.textContent=adding?'♥':'♡';source.classList.add('vn-heart-pop');setTimeout(()=>source.classList.remove('vn-heart-pop'),500)}
@@ -469,7 +497,7 @@ function toggleWish(id){
  toast(adding?'Added to your saved compositions':'Removed from saved compositions');
 }
 function add(id){
- const source=document.activeElement,p=items.find(x=>x.id===id);if(!p)return;
+ const active=document.activeElement,source=active&&active.closest?active.closest('.product, .detail-layout, .cart-row, .quick-view')||active:active,p=items.find(x=>x.id===id);if(!p)return;
  const found=cart.find(x=>x.id===id);if(found)found.qty++;else cart.push({id,qty:1});persistStore();
  vnFlyTo(document.querySelector('.head-actions .bag'),source);updateCart();
  if(location.hash==='#/cart')renderRoute();toast(p.name+' added to your bag');
@@ -582,8 +610,24 @@ function setCampaign(index,btn){const campaigns=[{title:'Silence has<br><i>a sig
 
 function filterRouteCollection(){const q=(document.getElementById('routeSearch')?.value||'').toLowerCase();const f=document.getElementById('routeFamily')?.value||'All';const list=items.filter(p=>(f==='All'||p.family===f)&&(p.name+' '+p.subtitle+' '+p.family).toLowerCase().includes(q));document.getElementById('routeProducts').innerHTML=list.map(routeProductCard).join('')||'<p>No fragrances found.</p>'}
 function completeDemoOrder(e){e.preventDefault();if(!cart.length){toast('Your bag is empty');return}const fd=new FormData(e.target);const name=String(fd.get('name')||'Guest');const subtotal=cart.reduce((sum,x)=>sum+(items.find(p=>p.id===x.id)?.price||0)*x.qty,0);const delivery=subtotal===0||subtotal>=3500?0:150;const order={id:makeOrderId(),name,email:String(fd.get('email')||''),phone:String(fd.get('phone')||''),items:cart.map(x=>({...x})),total:subtotal+delivery,createdAt:new Date().toLocaleString(),statusIndex:0};orders.unshift(order);orders=orders.slice(0,30);cart=[];persistStore();updateCart();document.getElementById('routeView').innerHTML=routeShell('ORDER RECEIVED · تم استلام الطلب','Thank you, '+escapeHTML(name),'<p class="route-lead">Your demo order reference is:</p><div class="tracking-code">'+order.id+'</div><p class="tracking-notice">احتفظ برقم الطلب واستخدم البريد الإلكتروني أو الهاتف لتتبعه من نفس المتصفح. لا يتم إرسال الطلب إلى متجر فعلي أو تحصيل أي مدفوعات.</p><a class="route-btn" href="#/track">Track your order · تتبع الطلب</a><a class="continue-link" href="#/collection">Continue exploring</a>');window.scrollTo(0,0)}
-window.addEventListener('hashchange',()=>{document.body.classList.add('route-changing');renderRoute();if(location.hash==='#/compare')renderComparison();if(location.hash==='#/gift')updateGiftPreview();setTimeout(()=>document.body.classList.remove('route-changing'),550)});
-document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#/"]');if(a)closeSidebar()});
+function vnNavigate(hash){
+ if(!hash||hash===location.hash)return;
+ history.pushState(null,'',hash);
+ document.body.classList.add('route-changing');
+ renderRoute();
+ if(hash==='#/gift')updateGiftPreview();
+ closeSidebar();
+ setTimeout(()=>document.body.classList.remove('route-changing'),550);
+}
+document.addEventListener('click',e=>{
+ const a=e.target.closest('a[href^="#/"]');
+ if(!a)return;
+ const hash=a.getAttribute('href');
+ if(hash==='#/compare'){e.preventDefault();return}
+ e.preventDefault();vnNavigate(hash);
+});
+window.addEventListener('hashchange',()=>{document.body.classList.add('route-changing');renderRoute();if(location.hash==='#/gift')updateGiftPreview();setTimeout(()=>document.body.classList.remove('route-changing'),550)});
+window.addEventListener('popstate',()=>{renderRoute();if(location.hash==='#/gift')updateGiftPreview()});
 
 applyLanguage();renderRoute();
 </script>
